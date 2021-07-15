@@ -37,41 +37,35 @@
 
  //Second Way
 
- let productsContainer = document.getElementById('products');
-
 fetch('http://localhost:3000/api/furniture')
   .then(response => response.json())
   .then(data => {
     
     data.forEach(element => {
-      for (let i = 0; i < data.length; i++){
+      for (let i = 0; data.length; i++){
 
-        let productId = data[i]._id;
+        let itemId = data[i]._id;
         let name = data[i].name;
         let description = data[i].description;
         let price = data[i].price;
         let imageUrl = data[i].imageUrl;
 
-        console.log(typeof(productId));
-        console.log(productId);
+        console.log(itemId);
 
-        // let product = document.createElement('div');
+        let item = document.createElement('div');
 
-        // product.innerHTML = `
-				// <a href="product.html?id=${productId}">
-				// 	<div class="product shadow">
-				// 		<img src="${imageUrl}" alt="Product Image">
-				// 		<button>
-				// 			<img src="images/add-to-basket.svg" alt="add-to-cart">
-				// 		</button>
-				// 		<div class="content">
-				// 			<h3>${name}</h3>
-				// 			<p class="desc">${description}</p>
-				// 			<span class="price">$ ${price}</span>
-				// 		</div>
-				// 	</div>
-				// </a>`;
-        // productsContainer.appendChild(product);
+        item.innerHTML = 
+        `<a href='????'>
+            <div class= 'item'>
+              <img class='pic' src="${imageUrl}" alt="furniture">
+              <div>
+                <h3 class='itemHeader'>${name}</h3>
+                <p class='description'>${description}</p>
+                <div class='price'>$${price} </div>
+              </div>
+            </div>
+          </a>`;
+        document.querySelector('body').appendChild(item);
       }
     });
   });
