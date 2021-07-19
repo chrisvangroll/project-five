@@ -1,11 +1,9 @@
 .item .pic {
-  height: 200px;
+  height: 201px;
   width: 200px;
 }
 
 .cart {
   display: flex;
   justify-content: flex-end;
-}
-
-/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles.css.map */
