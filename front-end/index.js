@@ -22,13 +22,22 @@
               <div>
                 <h2 class='itemHeader'>${product.name}</h2>
                 <p class='description'>${product.description}</p>
-                <div class='price'>$${product.price} </div>
+                <div class='price'>$${product.price/100} </div>
               </div>
             </div>
           </a>`;
 
           return producto;
    }
+
+   function loadCartNumbers() {
+    let productNumbers = localStorage.getItem('cartNumbers');
+    if( productNumbers ) {
+      document.getElementById('cartNumber').textContent = productNumbers;
+    }
+}
+
+loadCartNumbers()
  
    // //First Way
 // fetch('http://localhost:3000/api/furniture')

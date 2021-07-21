@@ -2,6 +2,7 @@
 let addToCartBtn = document.getElementById('addToCart');
 let cartNumber = document.getElementById('cartNumber');
 
+
 //Display Product 
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -38,6 +39,27 @@ function render(product){
     });
 
     function addToCart(){
-        localStorage.setItem('cartNumbers', 1)
+        let productNumbers = localStorage.getItem('cartNumbers');
+        productNumbers = parseInt(productNumbers);
+
+       if (productNumbers){
+            localStorage.setItem('cartNumbers', productNumbers + 1);
+            cartNumber.textContent = productNumbers + 1;
+        }
+        else{
+            localStorage.setItem('cartNumbers', 1);
+            cartNumber.textContent = 1;
+        }
     }
+
+    function loadCartNumbers() {
+        let productNumbers = localStorage.getItem('cartNumbers');
+        if( productNumbers ) {
+            cartNumber.textContent = productNumbers;
+        }
+    }
+
+loadCartNumbers()
+    
+
     
