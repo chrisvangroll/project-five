@@ -1,9 +1,26 @@
-.item .pic {
-  height: 201px;
-  width: 200px;
+.headr {
+  background-image: url(../../back-end/images/kika-pardo-GyclzZ3lBPk-unsplash.webp);
+}
+.headr h1 {
+  color: white;
+}
+
+.orinoco {
+  font-family: "Lobster", cursive;
+  font-size: 5em;
+  font-weight: 700;
 }
 
 .cart {
   display: flex;
   justify-content: flex-end;
+}
+
+body {
+  background-color: #e6e6e6;
+}
+
+.item .pic {
+  height: 201px;
+  width: 200px;
 }/*# sourceMappingURL=styles.css.map */
