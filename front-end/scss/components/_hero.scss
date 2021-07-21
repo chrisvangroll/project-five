@@ -1,7 +1,17 @@
 .headr{
     background-image: url(../../back-end/images/kika-pardo-GyclzZ3lBPk-unsplash.webp);
-
+    height: 82vh;
     h1{
         color: white;
+    }
+    
+    .plcHolderText{
+        color: white;
+    }
+
+    .seeProducts{
+        background-color: $gray;
+        color: black;
+        border: none;
     }
 }

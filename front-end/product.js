@@ -12,8 +12,15 @@ fetch('http://localhost:3000/api/furniture/' + id)
    .then(response => response.json())
    .then(data => {
         let item = render(data);
-        document.querySelector('main').appendChild(item)
+        document.querySelector('main').appendChild(item);
+
+        addToCartBtn.addEventListener("click", () =>{
+            addToCart();
+            storeItem(data);
+        });
    });
+
+  
 
 function render(product){
 
@@ -31,16 +38,16 @@ function render(product){
             return producto;
     }
 
-
     
 
-    addToCartBtn.addEventListener("click", () =>{
-        addToCart();
-    });
+    // addToCartBtn.addEventListener("click", () =>{
+    //     addToCart();
+    // });
 
     function addToCart(){
         let productNumbers = localStorage.getItem('cartNumbers');
         productNumbers = parseInt(productNumbers);
+
 
        if (productNumbers){
             localStorage.setItem('cartNumbers', productNumbers + 1);
@@ -52,6 +59,11 @@ function render(product){
         }
     }
 
+    function storeItem (product){
+        let key = localStorage.getItem(product.name);
+
+    }
+
     function loadCartNumbers() {
         let productNumbers = localStorage.getItem('cartNumbers');
         if( productNumbers ) {
@@ -60,6 +72,4 @@ function render(product){
     }
 
 loadCartNumbers()
-    
-
     
