@@ -1,23 +1,53 @@
 .headr {
-  background-image: url(../../back-end/images/kika-pardo-GyclzZ3lBPk-unsplash.webp);
-  height: 82vh;
+  background-image: url(../../back-end/images/background.webp);
+  height: 84vh;
 }
 .headr h1 {
   color: white;
 }
 .headr .plcHolderText {
   color: white;
+  width: 75%;
+}
+@media (max-width: 550px) {
+  .headr .plcHolderText {
+    width: 95%;
+  }
 }
 .headr .seeProducts {
   background-color: #e6e6e6;
   color: black;
   border: none;
 }
+.headr .buttonStyles {
+  background-image: linear-gradient(#6C6A7B, #817671);
+  border: none;
+  padding: 20px;
+  border-radius: 5vw;
+  margin-top: 0px;
+  color: white;
+  font-weight: 600;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+.headr .buttonStyles:hover {
+  opacity: 0.8;
+}
 
-.orinoco {
-  font-family: "Lobster", cursive;
-  font-size: 5em;
-  font-weight: 700;
+@media (max-width: 500px) {
+  .orinoco {
+    width: 175px;
+  }
+}
+@media (min-width: 501px) {
+  .orinoco {
+    width: 225px;
+  }
+}
+@media (min-width: 1000px) {
+  .orinoco {
+    width: 325px;
+  }
 }
 
 .cart {
@@ -27,4 +57,5 @@
 
 body {
   background-color: #e6e6e6;
+  font-family: "Times New Roman", Times, serif;
 }/*# sourceMappingURL=styles.css.map */

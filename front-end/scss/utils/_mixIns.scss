@@ -1,0 +1,15 @@
+@mixin buttonStyles{
+    background-image: linear-gradient( $purplishGray, $brownishGray);
+    border: none;
+    padding: 20px;
+    border-radius: 5vw;
+    margin-top: 0px;
+    color: white;
+    font-weight: 600;
+    font-size: 1.5em;
+    cursor: pointer;
+
+    &:hover{
+        opacity: .8;
+    }
+}
