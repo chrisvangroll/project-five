@@ -54,9 +54,18 @@ function render(product){
 
     //Add products to local storage
     function storeItem (data){
-        let value = localStorage.getItem(data.name);
-        value = parseInt(value);
-        value ? localStorage.setItem(data.name, value + 1) : localStorage.setItem(data.name, 1);
+        
+            let storage = localStorage.getItem('cartKey');
+            storage === null ? storage = [] : storage = JSON.parse(storage);
+            const productInCart = {
+                id : data._id ,
+                name : data.name ,
+                price : data.price ,
+                varnish : data.varnish ,
+            }
+            storage.push(productInCart);
+            localStorage.setItem('cartKey', JSON.stringify(storage));
+
     }
 
     //Display cart number when browser refreshes
@@ -68,4 +77,6 @@ function render(product){
     }
 
 loadCartNumbers()
-    
+
+    //let x = localStorage.getItem('[object Object]');
+    console.log(localStorage);
