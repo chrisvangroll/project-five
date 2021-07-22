@@ -6,32 +6,34 @@
 
    function displayProducts(data) {
      for (let i = 0; i < data.length; i++){
-       
       let item = render(data[i]);
-      document.querySelector('main').appendChild(item);
+      document.getElementById('rowDiv').appendChild(item);
      }
    }
 
    function render(product){
-
     let producto = document.createElement('div');
+    producto.classList.add('col-sm-12', 'col-md-6', 'col-lg-4');
     producto.innerHTML = 
-      `<a href='product.html?id=${product._id}' id='${product._id}'>
-            <div class= 'item'>
-              <img class='pic' src="${product.imageUrl}" alt="furniture">
-              <div>
-                <h2 class='itemHeader'>${product.name}</h2>
-                <p class='description'>${product.description}</p>
-                <div class='price'>$${product.price/100} </div>
-              </div>
+      `
+      <div class = 'col sm-12 md-6 lg-4 '>
+        <a class = 'text-decoration-none' href='product.html?id=${product._id}' id='${product._id}'>
+          <div class= 'item card'>
+            <img class='card-img-top' src="${product.imageUrl}" alt="furniture">
+            <div class='card-body'>
+              <h5 class='card-title'>${product.name}</h5>
+              <p class='card-text'>${product.description}</p>
+              <div class='price'>$${product.price/100} </div>
             </div>
-          </a>`;
+          </div>
+        </a>
+      </div>`;
 
           return producto;
    }
 
    function loadCartNumbers() {
-    let productNumbers = localStorage.getItem('cartNumbers');
+    let productNumbers = localStorage.getItem('totalItems');
     if( productNumbers ) {
       document.getElementById('cartNumber').textContent = productNumbers;
     }

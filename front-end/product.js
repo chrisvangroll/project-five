@@ -1,10 +1,8 @@
-// Get elements
+// Reference elements
 let addToCartBtn = document.getElementById('addToCart');
 let cartNumber = document.getElementById('cartNumber');
 
-
-//Display Product 
-
+//fetch data and call functions
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get('id');
 
@@ -21,7 +19,7 @@ fetch('http://localhost:3000/api/furniture/' + id)
    });
 
   
-
+//Display Product 
 function render(product){
 
     let producto = document.createElement('div');
@@ -38,34 +36,32 @@ function render(product){
             return producto;
     }
 
-    
-
-    // addToCartBtn.addEventListener("click", () =>{
-    //     addToCart();
-    // });
-
+    //add to cart total and display on page
     function addToCart(){
-        let productNumbers = localStorage.getItem('cartNumbers');
+        let productNumbers = localStorage.getItem('totalItems');
         productNumbers = parseInt(productNumbers);
 
 
        if (productNumbers){
-            localStorage.setItem('cartNumbers', productNumbers + 1);
+            localStorage.setItem('totalItems', productNumbers + 1);
             cartNumber.textContent = productNumbers + 1;
         }
         else{
-            localStorage.setItem('cartNumbers', 1);
+            localStorage.setItem('totalItems', 1);
             cartNumber.textContent = 1;
         }
     }
 
-    function storeItem (product){
-        let key = localStorage.getItem(product.name);
-
+    //Add products to local storage
+    function storeItem (data){
+        let value = localStorage.getItem(data.name);
+        value = parseInt(value);
+        value ? localStorage.setItem(data.name, value + 1) : localStorage.setItem(data.name, 1);
     }
 
+    //Display cart number when browser refreshes
     function loadCartNumbers() {
-        let productNumbers = localStorage.getItem('cartNumbers');
+        let productNumbers = localStorage.getItem('totalItems');
         if( productNumbers ) {
             cartNumber.textContent = productNumbers;
         }
