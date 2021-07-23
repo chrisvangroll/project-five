@@ -58,4 +58,18 @@
 body {
   background-color: #e6e6e6;
   font-family: "Times New Roman", Times, serif;
+}
+
+.cards a {
+  color: black;
+}
+.cards .cardBtn {
+  background-image: linear-gradient(#6C6A7B, #817671);
+  color: white;
+  border: none;
+}
+
+footer {
+  background-color: #6C6A7B;
+  color: white;
 }/*# sourceMappingURL=styles.css.map */
