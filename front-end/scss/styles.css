@@ -102,4 +102,8 @@ footer {
 }
 .buttonStyles:hover {
   opacity: 0.8;
+}
+
+.popUp {
+  display: none;
 }/*# sourceMappingURL=styles.css.map */

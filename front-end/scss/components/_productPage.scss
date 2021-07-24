@@ -5,3 +5,7 @@
 .buttonStyles{
     @include buttonStyles;
 }
+
+.popUp{
+    display: none;
+}

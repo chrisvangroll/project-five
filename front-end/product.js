@@ -16,6 +16,7 @@ fetch('http://localhost:3000/api/furniture/' + id)
         addToCartBtn.addEventListener("click", () =>{
             addToCart();
             storeItem(data);
+            popUp();
         });
    });
 
@@ -24,7 +25,7 @@ fetch('http://localhost:3000/api/furniture/' + id)
     function render(product){
 
     let producto = document.createElement('div');
-    //producto.classList.add('mx-auto');
+    producto.setAttribute('id', 'productDiv');
     producto.innerHTML = 
         ` <div id='${product._id}' class = 'd-flex flex-column'>
             <img class = 'w-50 mx-auto' src="${product.imageUrl}" alt="furniture">
@@ -93,6 +94,15 @@ fetch('http://localhost:3000/api/furniture/' + id)
         select += `</select>`;
         return select;
     }
+
+    //item added to cart confirmation
+    function popUp () {
+        document.getElementById('popUp').classList.remove('popUp');
+        document.getElementById('productDiv').style.display = 'none';
+        addToCartBtn.style.display='none';
+        document.getElementsByTagName('footer')[0].style.display = 'none';
+    }
+
 
 //let arr = ['one', 'two', 'three'];
 //console.log(dropDownMenu(arr))
