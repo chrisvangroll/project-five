@@ -1,6 +1,7 @@
 // Reference elements
 let addToCartBtn = document.getElementById('addToCart');
 let cartNumber = document.getElementById('cartNumber');
+let divForBtn = document.getElementById('btnDiv');
 
 //fetch data and call functions
 const urlParams = new URLSearchParams(window.location.search);
@@ -9,8 +10,9 @@ const id = urlParams.get('id');
 fetch('http://localhost:3000/api/furniture/' + id)
    .then(response => response.json())
    .then(data => {
+        //dropDownMenu(data);
         let item = render(data);
-        document.querySelector('main').appendChild(item);
+        document.querySelector('main').insertBefore(item, divForBtn);
 
         addToCartBtn.addEventListener("click", () =>{
             addToCart();
@@ -23,18 +25,31 @@ fetch('http://localhost:3000/api/furniture/' + id)
 function render(product){
 
     let producto = document.createElement('div');
+    //producto.classList.add('mx-auto');
     producto.innerHTML = 
-        ` <div id='${product._id}' class= 'item'>
-                <img class='pic' src="${product.imageUrl}" alt="furniture">
-                <div>
-                    <h3 class='itemHeader'>${product.name}</h3>
-                    <p class='description'>${product.description}</p>
-                <div class='price'>$${product.price} </div>
-                </div>
-            </div>`;
+        ` <div id='${product._id}' class = 'd-flex flex-column'>
+            <img class = 'w-50 mx-auto' src="${product.imageUrl}" alt="furniture">
+            <h3 class='itemHeader w-50 mx-auto fw-bold fs-1'>${product.name}</h3>
+            <p class='description w-50 mx-auto fs-4'>${product.description}</p>
+            <div class='price w-50 mx-auto fs-4 fw-bold'>$${product.price/100} </div>
+        </div>`;
 
             return producto;
     }
+
+    // function dropDownMenu (product) {
+    //     let select = document.createElement('select'); 
+    //     let options = product.varnish; 
+
+    //     for(let i = 0; i < options.length; i++) {
+    //         let opt = options[i];
+    //         let optionElement = document.createElement("option");
+    //         optionElement.textContent = opt;
+    //         optionElement.value = opt;
+    //         select.appendChild(optionElement);
+    //     }​
+    //     return select;
+    // }
 
     //add to cart total and display on page
     function addToCart(){

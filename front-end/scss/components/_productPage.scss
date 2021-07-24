@@ -1,0 +1,7 @@
+.productPageHeader{
+    border-bottom: $darkBrown solid 5px;
+}
+
+.buttonStyles{
+    @include buttonStyles;
+}

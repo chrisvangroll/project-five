@@ -17,3 +17,16 @@
     display: flex;
     justify-content: flex-end;
 }
+
+//shopping cart icon
+
+.badge{
+  font-size: 25px;
+    background: $purplishGray;
+    color: #fff;
+    padding: 5px 10px;
+    vertical-align: top;
+    margin-left: -15px;
+    border-radius: 30px;
+}
+
