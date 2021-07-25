@@ -13,3 +13,19 @@
         opacity: .8;
     }
 }
+
+@mixin buttonStylesSquare{
+    background-image: linear-gradient( $purplishGray, $brownishGray);
+    border: none;
+    padding: 10px 15px;
+    margin-top: 0px;
+    color: white;
+    font-weight: 600;
+    //font-size: 1.5em;
+    cursor: pointer;
+    margin-right: 6vw;
+
+    &:hover{
+        opacity: .8;
+    }
+}

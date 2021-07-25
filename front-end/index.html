@@ -12,7 +12,7 @@
 
 </head>
 <body>
-    <div class="container">
+    <header class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
               <img class='orinoco mt-2 mb-2' src="../back-end/images/logo.png" alt="Logo">
@@ -22,41 +22,39 @@
               <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link active fs-1" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active fs-1" aria-current="page" href="index.html">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link fs-1 ms-5" href="#"><i class="fas fa-shopping-cart"></i>
+                    <a class="nav-link fs-1 ms-5" href="checkOut.html"><i class="fas fa-shopping-cart"></i>
                       <span class="fw bold badge" id ='cartNumber'>0</span></a>
                   </li>
                 </ul>
               </div>
             </div>
         </nav>
-    </div>
+      </header>
     <div class="container-fluid headr d-flex justify-content-center align-items-center">
         <div class="px-4 py-5 my-1 text-center">
         <h1 class="display-5 fw-bold  mb-3">GENERATIONS OF QUALITY</h1>
         <p class='plcHolderText fs-3  mx-auto'>Orinoco is a fictitious furniture company.  The front end of this website was developed by Chris VanGroll using Bootstrap 5 and Vanilla Javascript.
         </p>
-        <div class="col-lg-6 mx-auto mt-4">
+        <a href='#jumpToProducts' class="col-lg-6 mx-auto mt-4">
             <button type="button" class="buttonStyles">See Our Products</button>
-        </div>
+        </a>
       </div>
     </div>
-
     <main>
-      <div class="container">
+      <a id='jumpToProducts' class="container">
         <div class = 'row justify-content-center mt-5' id="rowDiv"></div>
       </div>
-
     </main>
-    <footer>
-      <div class="container d-flex p-5 justify-content-center fs-4">
-        <div class = 'ms-5 me-5'>Locations</div>
-        <div class = 'ms-5 me-5'>Hours of Operation</div>
-        <div class = 'ms-5 me-5'>Contact Us</div>
+    <footer class ='mt-5'>
+      <div class=" foot container d-flex p-5 justify-content-center fs-4">
+        <div class = 'ms-5 me-5 text-center'>Locations</div>
+        <div class = 'ms-5 me-5 text-center'>Hours of Operation</div>
+        <div class = 'ms-5 me-5 text-center'>Contact Us</div>
     </footer>
-    <script src="index.js" defer></script>
+    <script src="js/index.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body>

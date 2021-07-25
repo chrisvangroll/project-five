@@ -85,6 +85,17 @@ footer {
   color: white;
 }
 
+@media (max-width: 700px) {
+  .foot {
+    flex-direction: column;
+    justify-content: start;
+  }
+}
+@media (min-width: 701px) {
+  .foot {
+    flex-direction: row;
+  }
+}
 .productPageHeader {
   border-bottom: #4C3533 solid 5px;
 }
@@ -106,4 +117,27 @@ footer {
 
 .popUp {
   display: none;
+}
+
+.popUpNotRemoved {
+  position: relative;
+  top: 20vh;
+}
+
+.buttonStylesSquare {
+  background-image: linear-gradient(#6C6A7B, #817671);
+  border: none;
+  padding: 10px 15px;
+  margin-top: 0px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 6vw;
+}
+.buttonStylesSquare:hover {
+  opacity: 0.8;
+}
+
+.fa-check-circle {
+  color: #2aa72a;
 }/*# sourceMappingURL=styles.css.map */
