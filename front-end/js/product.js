@@ -61,17 +61,16 @@ fetch('http://localhost:3000/api/furniture/' + id)
 
     //Add products to local storage
     function storeItem (data){
-        
-            let storage = localStorage.getItem('cartKey');
-            storage === null ? storage = [] : storage = JSON.parse(storage);
-            const productInCart = {
-                id : data._id ,
-                name : data.name ,
-                price : data.price ,
-                varnish : data.varnish ,
-            }
-            storage.push(productInCart);
-            localStorage.setItem('cartKey', JSON.stringify(storage));
+        let storage = localStorage.getItem('cartKey');
+        storage === null ? storage = [] : storage = JSON.parse(storage);
+        const productInCart = {
+            id : data._id ,
+            name : data.name ,
+            price : data.price ,
+            varnish : data.varnish ,
+        }
+        storage.push(productInCart);
+        localStorage.setItem('cartKey', JSON.stringify(storage));
 
     }
 
