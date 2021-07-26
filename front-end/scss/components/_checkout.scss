@@ -1,3 +1,17 @@
 .checkoutImage{
     width: 50px
 }
+
+.fa-trash-alt{
+    color: red;
+    position: relative;
+    top: .25em;
+    
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.total{
+    margin-right: 12vw;
+}

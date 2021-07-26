@@ -68,7 +68,7 @@ fetch('http://localhost:3000/api/furniture/' + id)
         const productInCart = {
             id : data._id ,
             name : data.name ,
-            price : data.price,
+            price : data.price/100,
             imageUrl: data.imageUrl ,
             //varnish : dropDownSelect.value,
             //varnish : varnishValue,

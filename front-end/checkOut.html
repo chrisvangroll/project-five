@@ -35,15 +35,15 @@
       <main>
         <div class="container">
           <div class="d-flex row">
-              <form class='md-w-50 col-md-6' action="">
-                  <p class='fs-4 fw-bold'>Contact Information</p>
+              <form class='md-w-50 col-md-6 fs-4' action="">
+                  <p class='fs-3 fw-bold'>Contact Information</p>
                   <label for="email">Email</label>
                   <input class='mb-3' id='email' type="text" name = 'buyerInfo'>
                   <br>
                   <label for="phoneNumber">Phone Number</label>
                   <input id='phoneNumber' type="text" name = 'buyerInfo'>
                   <br>
-                  <p class='fs-4 fw-bold mt-5'>Billing Address</p>
+                  <p class='fs-3 fw-bold mt-5'>Billing Address</p>
                   <label for="fname">First Name</label>
                   <input class='mb-3' id='fname' type="text" name = 'buyerInfo'>
                   <br>
@@ -114,7 +114,14 @@
                   <label for="zipCode"> Zip Code</label>
                   <input class='w-25' id='zipCode' type="text" name = 'buyerInfo'> 
               </form>
-               <div id='confirmItems'class='col-md-6'></div> 
+               <div id='confirmItems'class='col-md-6'>
+                 <div class='fw-bold fs-3'>Cart Items</div>
+                 <div class="d-flex justify-content-end mt-2 total">
+                  <div class="fw-bold fs-3 border border-3">
+                    Total: <span></span>
+                  </div>
+                 </div>
+               </div> 
             </div>
         </div>
         <div class='d-flex justify-content-center mt-5'>
