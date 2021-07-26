@@ -1,7 +1,9 @@
 // Reference elements
-let addToCartBtn = document.getElementById('addToCart');
-let cartNumber = document.getElementById('cartNumber');
-let divForBtn = document.getElementById('btnDiv');
+const addToCartBtn = document.getElementById('addToCart');
+const cartNumber = document.getElementById('cartNumber');
+const divForBtn = document.getElementById('btnDiv');
+const varnishDropdown = document.getElementById('selectOption');
+
 
 //fetch data and call functions
 const urlParams = new URLSearchParams(window.location.search);
@@ -66,8 +68,10 @@ fetch('http://localhost:3000/api/furniture/' + id)
         const productInCart = {
             id : data._id ,
             name : data.name ,
-            price : data.price ,
-            varnish : data.varnish ,
+            price : data.price,
+            imageUrl: data.imageUrl ,
+            //varnish : dropDownSelect.value,
+            //varnish : varnishValue,
         }
         storage.push(productInCart);
         localStorage.setItem('cartKey', JSON.stringify(storage));
@@ -84,14 +88,14 @@ fetch('http://localhost:3000/api/furniture/' + id)
 
     //Create dropdown menu
     function dropDownMenu (product) {
-        let select = `<select class = 'w-25'>`; 
+        let dropDownSelect = `<select id='selectOption' class = 'w-25'>`; 
         let options = product; 
 
         for(let i = 0; i < options.length; i++) {
-            select += `<option value = '${options[i]}' class ='fs-5'>${options[i]}</option>`;
+            dropDownSelect += `<option value = '${options[i]}' class ='fs-5'>${options[i]}</option>`;
         }
-        select += `</select>`;
-        return select;
+        dropDownSelect += `</select>`;
+        return dropDownSelect;
     }
 
     //item added to cart confirmation
@@ -102,9 +106,20 @@ fetch('http://localhost:3000/api/furniture/' + id)
         document.getElementsByTagName('footer')[0].style.display = 'none';
     }
 
+    // varnishDropdown.addEventListener('change',(e) =>{
+    //     let varnishValue = e.target.value;
+    // });
+ 
+    // function getVarnish () {
+    //     let x = select.value;
+    //     return x;
+    // }
+
 
 //let arr = ['one', 'two', 'three'];
 //console.log(dropDownMenu(arr))
 loadCartNumbers()
+
+
 
     
