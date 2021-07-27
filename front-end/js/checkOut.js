@@ -1,5 +1,8 @@
 const confirmItems = document.getElementById('confirmItems');
 
+displayPurchase();
+loadCartNumbers();
+
 function displayPurchase(){
     //for(let i=0; i)
     let purchases = localStorage.getItem('cartKey');
@@ -27,7 +30,11 @@ function displayPurchase(){
     } 
     return purchases
 }
-//console.log(displayPurchase())
+
+
+document.getElementsByTagName('button')[1].addEventListener('click', () =>{
+    let contact = {}
+})
 
 function loadCartNumbers() {
     let productNumbers = localStorage.getItem('totalItems');
@@ -35,5 +42,3 @@ function loadCartNumbers() {
         cartNumber.textContent = productNumbers;
     }
 }
-loadCartNumbers();
-displayPurchase();

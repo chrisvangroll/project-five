@@ -70,8 +70,9 @@ fetch('http://localhost:3000/api/furniture/' + id)
             name : data.name ,
             price : data.price/100,
             imageUrl: data.imageUrl ,
-            //varnish : dropDownSelect.value,
+            //varnish : varnishDropdown.value,
             //varnish : varnishValue,
+            //varnish : getVarnish(),
         }
         storage.push(productInCart);
         localStorage.setItem('cartKey', JSON.stringify(storage));
