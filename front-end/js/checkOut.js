@@ -2,12 +2,20 @@ const confirmItems = document.getElementById('confirmItems');
 const total = document.getElementById('total');
 
 displayPurchase();
+addListenersToBins();
 loadCartNumbers();
-
-
-const prices = document.querySelectorAll('.price');
-//console.log(prices);
 subtractFromTotal();
+
+function addListenersToBins (){
+    let bins = document.querySelectorAll('i');
+    for(let bin of bins){
+        bin.addEventListener('click', (e)=>{
+            removeItem(e.target.id);
+            subtractCartNumber();
+            subtractFromTotal();
+        });
+    }
+}
 
 function displayPurchase(){
     //for(let i=0; i)
@@ -34,31 +42,12 @@ function displayPurchase(){
     return purchases
 }
 
-function addListenersToBins (){
-    let bins = document.querySelectorAll('i');
-    for(let bin of bins){
-        bin.addEventListener('click', (e)=>{
-            // let price = e.target.previousSibling;
-            // console.log(price);
-            // subtractFromTotal(price);
-            removeItem(e.target.id);
-            subtractCartNumber();
-            // displayTotal();
-            subtractFromTotal();
-        });
+function loadCartNumbers() {
+    let productNumbers = localStorage.getItem('totalItems');
+    if( productNumbers ) {
+        cartNumber.textContent = productNumbers;
     }
 }
-
-subtractFromTotal();
-function subtractFromTotal (){
-    let sum = 0;
-    for(let i=0; i < prices.length; i++){
-        sum += parseInt(prices[i].textContent);
-    }
-    total.textContent = sum;
-}
-
-addListenersToBins();
 
 function removeItem(productId){
     let storage = localStorage.getItem('product');
@@ -81,14 +70,14 @@ function subtractCartNumber(){
     cartNumber.textContent = productNumbers - 1;
 }
 
-
-
-
-
-
-function loadCartNumbers() {
-    let productNumbers = localStorage.getItem('totalItems');
-    if( productNumbers ) {
-        cartNumber.textContent = productNumbers;
+function subtractFromTotal (){
+    const prices = document.querySelectorAll('.price');
+    let sum = 0;
+    for(let i=0; i < prices.length; i++){
+        sum += parseInt(prices[i].textContent);
     }
+    total.textContent = sum;
 }
+
+
+
