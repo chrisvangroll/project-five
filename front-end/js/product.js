@@ -19,6 +19,7 @@ fetch('http://localhost:3000/api/furniture/' + id)
             addToCart();
             storeItem(data);
             popUp();
+            totalCost(data);
         });
    });
 
@@ -77,6 +78,14 @@ fetch('http://localhost:3000/api/furniture/' + id)
 
     }
 
+    //store sum of products in Local Storage
+
+    function totalCost(data){
+        let total = localStorage.getItem('totalCost');
+        total = parseInt(total);
+        total ? localStorage.setItem('totalCost', total + (data.price/100)) : localStorage.setItem('totalCost', data.price/100);
+    }
+  
     //Display cart number when browser refreshes
     function loadCartNumbers() {
         let productNumbers = localStorage.getItem('totalItems');

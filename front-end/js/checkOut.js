@@ -61,13 +61,10 @@ function subtractCartNumber(){
     productNumbers = parseInt(productNumbers);
     localStorage.setItem('totalItems', productNumbers - 1);
     cartNumber.textContent = productNumbers - 1;
-
-   
 }
 
-// document.getElementsByTagName('button')[1].addEventListener('click', () =>{
-//     let contact = {}
-// })
+
+
 
 function loadCartNumbers() {
     let productNumbers = localStorage.getItem('totalItems');
