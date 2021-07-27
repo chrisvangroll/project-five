@@ -70,9 +70,7 @@ fetch('http://localhost:3000/api/furniture/' + id)
             name : data.name ,
             price : data.price/100,
             imageUrl: data.imageUrl ,
-            //varnish : varnishDropdown.value,
-            //varnish : varnishValue,
-            //varnish : getVarnish(),
+            varnish : document.getElementById('selectOption').value,
         }
         storage.push(productInCart);
         localStorage.setItem('cartKey', JSON.stringify(storage));
@@ -107,18 +105,6 @@ fetch('http://localhost:3000/api/furniture/' + id)
         document.getElementsByTagName('footer')[0].style.display = 'none';
     }
 
-    // varnishDropdown.addEventListener('change',(e) =>{
-    //     let varnishValue = e.target.value;
-    // });
- 
-    // function getVarnish () {
-    //     let x = select.value;
-    //     return x;
-    // }
-
-
-//let arr = ['one', 'two', 'three'];
-//console.log(dropDownMenu(arr))
 loadCartNumbers()
 
 

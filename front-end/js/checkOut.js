@@ -19,7 +19,7 @@ function displayPurchase(){
             <div class='w-25 d-flex justify-content-center'>
                 <img class='checkoutImage' src="${purchases[i].imageUrl}" alt="furniture">
             </div>
-            <div class='w-25 d-flex justify-content-center'></div>
+            <div class='w-25 d-flex justify-content-center fw-bold'>${purchases[i].varnish}</div>
             <div class='d-flex justify-content-center'>
                 <div class='price fs-5 fw-bold me-2'>$${purchases[i].price} </div>
             </div>
