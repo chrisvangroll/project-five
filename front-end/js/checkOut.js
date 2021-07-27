@@ -11,7 +11,7 @@ subtractFromTotal();
 
 function displayPurchase(){
     //for(let i=0; i)
-    let purchases = localStorage.getItem('cartKey');
+    let purchases = localStorage.getItem('product');
     purchases = JSON.parse(purchases);
     for (let i=0; i < purchases.length; i++){
         let purchaseDiv = document.createElement('div');
@@ -61,7 +61,7 @@ function subtractFromTotal (){
 addListenersToBins();
 
 function removeItem(productId){
-    let storage = localStorage.getItem('cartKey');
+    let storage = localStorage.getItem('product');
     storage = JSON.parse(storage);
 
     for(let i=0; i < storage.length; i++){
@@ -70,7 +70,7 @@ function removeItem(productId){
             storage.splice([i], 1)
         }
     }
-    localStorage.setItem('cartKey', JSON.stringify(storage));
+    localStorage.setItem('product', JSON.stringify(storage));
     location.reload();
 }
 
