@@ -7,12 +7,11 @@ function displayPurchase(){
     //for(let i=0; i)
     let purchases = localStorage.getItem('cartKey');
     purchases = JSON.parse(purchases);
-    console.log(purchases);
     for (let i=0; i < purchases.length; i++){
         let purchaseDiv = document.createElement('div');
         purchaseDiv.innerHTML = 
       `
-        <div class='d-flex flex-row fs-5 mt-3' id='${purchases[i].id}'>
+        <div class='d-flex flex-row fs-5 mt-3'>
             <div class='w-25'>
                 <div class='fw-bold'>${purchases[i].name}</div>
             </div>
@@ -23,7 +22,7 @@ function displayPurchase(){
             <div class='d-flex justify-content-center'>
                 <div class='price fs-5 fw-bold me-2'>$${purchases[i].price} </div>
             </div>
-            <i class="fas fa-trash-alt"></i>
+            <i id='${purchases[i].id}' class="fas fa-trash-alt"></i>
         </div>
         `;
       confirmItems.insertBefore(purchaseDiv, confirmItems.childNodes[2]);
@@ -31,10 +30,44 @@ function displayPurchase(){
     return purchases
 }
 
+function addListenersToBins (){
+    let bins = document.querySelectorAll('i');
+    for(let bin of bins){
+        bin.addEventListener('click', (e)=>{
+            removeItem(e.target.id);
+            subtractCartNumber();
+        });
+    }
+}
 
-document.getElementsByTagName('button')[1].addEventListener('click', () =>{
-    let contact = {}
-})
+addListenersToBins();
+
+function removeItem(productId){
+    let storage = localStorage.getItem('cartKey');
+    storage = JSON.parse(storage);
+
+    for(let i=0; i < storage.length; i++){
+        let counter = 0;
+        if(storage[i].id == productId){
+            storage.splice([i], 1)
+        }
+    }
+    localStorage.setItem('cartKey', JSON.stringify(storage));
+    location.reload();
+}
+
+function subtractCartNumber(){
+    let productNumbers = localStorage.getItem('totalItems');
+    productNumbers = parseInt(productNumbers);
+    localStorage.setItem('totalItems', productNumbers - 1);
+    cartNumber.textContent = productNumbers - 1;
+
+   
+}
+
+// document.getElementsByTagName('button')[1].addEventListener('click', () =>{
+//     let contact = {}
+// })
 
 function loadCartNumbers() {
     let productNumbers = localStorage.getItem('totalItems');
