@@ -1,7 +1,13 @@
 const confirmItems = document.getElementById('confirmItems');
+const total = document.getElementById('total');
 
 displayPurchase();
 loadCartNumbers();
+
+
+const prices = document.querySelectorAll('.price');
+//console.log(prices);
+subtractFromTotal();
 
 function displayPurchase(){
     //for(let i=0; i)
@@ -19,9 +25,7 @@ function displayPurchase(){
                 <img class='checkoutImage' src="${purchases[i].imageUrl}" alt="furniture">
             </div>
             <div class='w-25 d-flex justify-content-center fw-bold'>${purchases[i].varnish}</div>
-            <div class='d-flex justify-content-center'>
-                <div class='price fs-5 fw-bold me-2'>$${purchases[i].price} </div>
-            </div>
+            <div class='price fs-5 fw-bold me-2'>${purchases[i].price} </div>
             <i id='${purchases[i].id}' class="fas fa-trash-alt"></i>
         </div>
         `;
@@ -34,10 +38,24 @@ function addListenersToBins (){
     let bins = document.querySelectorAll('i');
     for(let bin of bins){
         bin.addEventListener('click', (e)=>{
+            // let price = e.target.previousSibling;
+            // console.log(price);
+            // subtractFromTotal(price);
             removeItem(e.target.id);
             subtractCartNumber();
+            // displayTotal();
+            subtractFromTotal();
         });
     }
+}
+
+subtractFromTotal();
+function subtractFromTotal (){
+    let sum = 0;
+    for(let i=0; i < prices.length; i++){
+        sum += parseInt(prices[i].textContent);
+    }
+    total.textContent = sum;
 }
 
 addListenersToBins();
@@ -62,6 +80,8 @@ function subtractCartNumber(){
     localStorage.setItem('totalItems', productNumbers - 1);
     cartNumber.textContent = productNumbers - 1;
 }
+
+
 
 
 
