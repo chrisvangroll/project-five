@@ -1,17 +1,26 @@
+loadCartNumbers()
+
+function displayProducts(data) {
+  for (let i = 0; i < data.length; i++){
+   let item = render(data[i]);
+   document.getElementById('rowDiv').appendChild(item);
+  }
+} 
+
   fetch('http://localhost:3000/api/furniture')
    .then(response => response.json())
    .then(data => {
     displayProducts(data);
    });
 
-   function displayProducts(data) {
-     for (let i = 0; i < data.length; i++){
-      let item = render(data[i]);
-      document.getElementById('rowDiv').appendChild(item);
-     }
-   }
+  function loadCartNumbers() {
+    let productNumbers = localStorage.getItem('totalItems');
+    if( productNumbers ) {
+      document.getElementById('cartNumber').textContent = productNumbers;
+    }
+}
 
-   function render(product){
+  function render(product){
     let producto = document.createElement('div');
     producto.classList.add('col-sm-12', 'mt-5', 'col-md-6', 'mb-5', 'col-lg-4', 'cards');
     producto.innerHTML = 
@@ -31,14 +40,9 @@
       </div>`;
 
           return producto;
-   }
+  }
 
-   function loadCartNumbers() {
-    let productNumbers = localStorage.getItem('totalItems');
-    if( productNumbers ) {
-      document.getElementById('cartNumber').textContent = productNumbers;
-    }
-}
+  
 
-loadCartNumbers()
+
  
