@@ -1,10 +1,14 @@
 const confirmItems = document.getElementById('confirmItems');
 const total = document.getElementById('total');
+var formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  });
 
 displayPurchase();
 addListenersToBins();
 loadCartNumbers();
-subtractFromTotal();
+sumPrices();
 
 function addListenersToBins (){
     let bins = document.querySelectorAll('i');
@@ -70,13 +74,13 @@ function subtractCartNumber(){
     cartNumber.textContent = productNumbers - 1;
 }
 
-function subtractFromTotal (){
+function sumPrices (){
     const prices = document.querySelectorAll('.price');
     let sum = 0;
     for(let i=0; i < prices.length; i++){
         sum += parseInt(prices[i].textContent);
     }
-    total.textContent = sum;
+    total.textContent = formatter.format(sum);
 }
 
 
