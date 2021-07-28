@@ -1,5 +1,7 @@
 const confirmItems = document.getElementById('confirmItems');
 const total = document.getElementById('total');
+const inputs = document.querySelectorAll('input');
+let contact = {};
 var formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
@@ -9,6 +11,45 @@ displayPurchase();
 addListenersToBins();
 loadCartNumbers();
 sumPrices();
+
+function getProductIds (){
+    let storage = localStorage.getItem('product');
+    storage = JSON.parse(storage);
+    let products =[];
+    for(let product of storage){
+        products.push(product.id);
+    }
+    console.log(products)
+}
+
+function getContactInfo (){
+     //e.preventDefault();
+     for(let input of inputs){
+        if(input.id == 'firstName'){
+            contact[input.id] = input.value;
+        }
+        if(input.id == 'lastName'){
+            contact[input.id] = input.value;
+        }
+        if(input.id == 'address'){
+            contact[input.id] = input.value;
+        }
+        if(input.id == 'city'){
+            contact[input.id] = input.value;
+        }
+        if(input.id == 'email'){
+            contact[input.id] = input.value;
+        }
+    }
+    return contact;
+}
+
+document.getElementById('submitBtn').addEventListener('click', ()=>{
+   getProductIds();
+   getContactInfo();
+});
+
+
 
 function addListenersToBins (){
     let bins = document.querySelectorAll('i');

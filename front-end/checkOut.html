@@ -36,19 +36,12 @@
         <div class="container">
           <div class="d-flex row">
               <form class='md-w-50 col-md-6 fs-4' action="">
-                  <p class='fs-3 fw-bold'>Contact Information</p>	
-                  <label for="email">Email</label>
-                  <input class='mb-3' id='email'pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" type="text" name = 'buyerInfo' required>
+                  <div class='fs-3 fw-bold mt-5'>Billing Address</div>
+                  <label for="firstName">First Name</label>
+                  <input class='mb-3' id='firstName' type="text" name = 'buyerInfo' required>
                   <br>
-                  <label for="phoneNumber">Phone Number</label>
-                  <input id='phoneNumber'pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7899" type="tel" name = 'buyerInfo' required>
-                  <br>
-                  <p class='fs-3 fw-bold mt-5'>Billing Address</p>
-                  <label for="fname">First Name</label>
-                  <input class='mb-3' id='fname' type="text" name = 'buyerInfo' required>
-                  <br>
-                  <label for="lname"> Last Name</label>
-                  <input class='mb-3' id='lname' type="text" name = 'buyerInfo' required>
+                  <label for="lastName"> Last Name</label>
+                  <input class='mb-3' id='lastName' type="text" name = 'buyerInfo' required>
                   <br>
                   <label for="address">Address</label>
                   <input class='w-75 mb-3' id='address' type="text" name = 'buyerInfo' required>
@@ -113,8 +106,14 @@
                   <br>
                   <label for="zipCode"> Zip Code</label>
                   <input class='w-25' id='zipCode' type="text" name = 'buyerInfo' required> 
+                  <p class='fs-3 fw-bold'>Contact Information</p>	
+                  <label for="email">Email</label>
+                  <input class='mb-3' id='email'pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" type="text" name = 'buyerInfo' required>
                   <br>
-                  <input class='mt-5 buttonStylesSquare' type="submit" value='Place Your Order'>
+                  <label for="phoneNumber">Phone Number</label>
+                  <input id='phoneNumber'pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7899" type="tel" name = 'buyerInfo' required>
+                  <br>
+                  <input id ='submitBtn' class='mt-5 buttonStylesSquare' type="click" value='Place Your Order'>
               </form>
                <div id='confirmItems'class='col-md-6'>
                  <div class='fw-bold fs-3'>Cart Items</div>
