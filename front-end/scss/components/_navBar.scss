@@ -22,11 +22,19 @@
 
 .badge{
   font-size: 25px;
-    background: $purplishGray;
-    color: #fff;
+    background: white;
+    color: $blue;
     padding: 5px 10px;
     vertical-align: top;
     margin-left: -15px;
     border-radius: 30px;
+}
+
+.fa-shopping-cart{
+    color: $blue;
+}
+
+.indexPageHeader{
+    border-bottom: black solid 5px;
 }
 

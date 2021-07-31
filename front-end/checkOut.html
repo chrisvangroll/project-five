@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Check Out</title>
+    <link rel="shortcut icon" type="image/jpg" href="../back-end/images/orinoco-favicon.png"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/2b5f9029cc.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="scss/styles.css">
@@ -14,7 +15,7 @@
     <header class="container mb-4 productPageHeader">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-              <img class='orinoco mt-2 mb-2' src="../back-end/images/logo.png" alt="Logo">
+              <img class='orinoco mt-2 mb-2' src="../back-end/images/orinocoLogo.webp" alt="Logo">
               <button class="navbar-toggler buttonStyles" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -36,7 +37,7 @@
         <div class="container">
           <div class="d-flex row">
               <form class='md-w-50 col-md-6 fs-4' action="">
-                  <div class='fs-3 fw-bold mt-5'>Billing Address</div>
+                  <div class='fs-3 fw-bold mb-2'>Billing Address</div>
                   <label for="firstName">First Name</label>
                   <input class='mb-3' id='firstName' type="text" name = 'buyerInfo' required>
                   <br>
@@ -106,19 +107,19 @@
                   <br>
                   <label for="zipCode"> Zip Code</label>
                   <input class='w-25' id='zipCode' type="text" name = 'buyerInfo' required> 
-                  <p class='fs-3 fw-bold'>Contact Information</p>	
+                  <p class='fs-3 fw-bold mt-4'>Contact Information</p>	
                   <label for="email">Email</label>
                   <input class='mb-3' id='email'pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" type="text" name = 'buyerInfo' required>
                   <br>
                   <label for="phoneNumber">Phone Number</label>
                   <input id='phoneNumber'pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7899" type="tel" name = 'buyerInfo' required>
                   <br>
-                  <input id ='submitBtn' class='mt-5 buttonStylesSquare' type="click" value='Place Your Order'>
+                  <input id ='submitBtn' class='mt-5 buttonStylesSquare' type="submit" value='Place Your Order'>
               </form>
                <div id='confirmItems'class='col-md-6'>
                  <div class='fw-bold fs-3'>Cart Items</div>
-                 <div class="d-flex justify-content-end mt-2 total">
-                  <div class="fw-bold fs-3 border border-3 px-3 py-1">
+                 <div class="d-flex justify-content-end mt-2 total w-100 pe-4">
+                  <div class=" fw-bold fs-4 py-1">
                     Total: <span id='total'></span>
                   </div>
                  </div>

@@ -15,12 +15,12 @@
   }
 }
 .headr .seeProducts {
-  background-color: #fffffff8;
+  background-color: #e9ecef;
   color: black;
   border: none;
 }
 .headr .buttonStyles {
-  background-image: linear-gradient(#6C6A7B, #817671);
+  background-color: #8952f9;
   border: none;
   padding: 10px 15px;
   border-radius: 5vw;
@@ -57,17 +57,25 @@
 
 .badge {
   font-size: 25px;
-  background: #6C6A7B;
-  color: #fff;
+  background: white;
+  color: #8952f9;
   padding: 5px 10px;
   vertical-align: top;
   margin-left: -15px;
   border-radius: 30px;
 }
 
+.fa-shopping-cart {
+  color: #8952f9;
+}
+
+.indexPageHeader {
+  border-bottom: black solid 5px;
+}
+
 body {
-  background-color: #fffffff8;
-  font-family: "Times New Roman", Times, serif;
+  background-color: #e9ecef;
+  font-family: "Montserrat", sans-serif;
   margin: 0;
 }
 
@@ -75,13 +83,13 @@ body {
   color: black;
 }
 .cards .cardBtn {
-  background-image: linear-gradient(#6C6A7B, #817671);
+  background-image: linear-gradient(to right, #d68040, #8952f9);
   color: white;
   border: none;
 }
 
 footer {
-  background-color: #6C6A7B;
+  background-color: #494949;
   color: white;
 }
 
@@ -97,11 +105,11 @@ footer {
   }
 }
 .productPageHeader {
-  border-bottom: #4C3533 solid 5px;
+  border-bottom: black solid 5px;
 }
 
 .buttonStyles {
-  background-image: linear-gradient(#6C6A7B, #817671);
+  background-color: #8952f9;
   border: none;
   padding: 10px 15px;
   border-radius: 5vw;
@@ -125,7 +133,7 @@ footer {
 }
 
 .buttonStylesSquare {
-  background-image: linear-gradient(#6C6A7B, #817671);
+  background-color: #8952f9;
   border: none;
   padding: 10px 15px;
   margin-top: 0px;
@@ -157,4 +165,8 @@ footer {
 
 .total {
   margin-right: 12vw;
+}
+
+.price {
+  width: 15%;
 }/*# sourceMappingURL=styles.css.map */

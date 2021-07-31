@@ -1,5 +1,6 @@
 @mixin buttonStyles{
-    background-image: linear-gradient( $purplishGray, $brownishGray);
+    //background-image: linear-gradient(to right, $orange, $blue);
+    background-color: $blue;
     border: none;
     padding: 10px 15px;
     border-radius: 5vw;
@@ -15,7 +16,8 @@
 }
 
 @mixin buttonStylesSquare{
-    background-image: linear-gradient( $purplishGray, $brownishGray);
+   // background-image: linear-gradient(to right, $orange, $blue);
+   background-color: $blue;
     border: none;
     padding: 10px 15px;
     margin-top: 0px;
