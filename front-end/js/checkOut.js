@@ -147,10 +147,10 @@ function loadCartNumbers() {
 function removeItem(productId){
     let storage = localStorage.getItem('product');
     storage = JSON.parse(storage);
-
+    let counter = 0;
     for(let i=0; i < storage.length; i++){
-    
-        if(storage[i].id == productId){
+        if(storage[i].id == productId && counter === 0){
+            counter += 1;
             storage.splice([i], 1);
         }
     }
