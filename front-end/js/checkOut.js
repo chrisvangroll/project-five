@@ -17,7 +17,7 @@ loadCartNumbers();
 sumPrices();
 
 //Event listener for submit button
-document.getElementById('submitBtn').addEventListener('click', (e)=>{
+document.getElementById('submitBtn').addEventListener('submit', (e)=>{
     e.preventDefault();
     let post = {contact: getContactInfo(), product: getProductIds()}
     //console.log(post);
@@ -81,7 +81,6 @@ function addListenersToBins (){
 }
 
 function displayPurchase(){
-    //for(let i=0; i)
     let purchases = localStorage.getItem('product');
     purchases = JSON.parse(purchases);
     for (let i=0; i < purchases.length; i++){

@@ -150,6 +150,28 @@ footer {
   color: #2aa72a;
 }
 
+@media (min-width: 500px) {
+  .productCard img {
+    width: 50%;
+  }
+  .productCard h3 {
+    width: 50%;
+  }
+  .productCard p {
+    width: 50%;
+  }
+  .productCard div {
+    width: 50%;
+  }
+}
+@media (max-width: 501px) {
+  .productCard img {
+    width: 100%;
+  }
+  .productCard p {
+    text-align: center;
+  }
+}
 .checkoutImage {
   width: 50px;
 }
@@ -169,4 +191,16 @@ footer {
 
 .price {
   width: 15%;
+}
+
+@media (max-width: 500px) {
+  .cartPage {
+    flex-direction: column-reverse;
+  }
+  .cartPage form {
+    margin-top: 40px;
+  }
+  .cartPage p {
+    margin-top: 40px;
+  }
 }/*# sourceMappingURL=styles.css.map */

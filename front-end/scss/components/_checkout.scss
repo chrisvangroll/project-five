@@ -19,3 +19,18 @@
 .price{
     width: 15%;
 }
+
+@media(max-width: 500px){
+    .cartPage{
+        flex-direction: column-reverse;
+
+        form{
+            margin-top: 40px;
+        }
+
+        p{
+            margin-top: 40px;
+        }
+    }
+   
+}

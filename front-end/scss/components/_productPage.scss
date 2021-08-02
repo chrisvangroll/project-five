@@ -24,3 +24,37 @@
 .fa-check-circle{
  color: rgb(42, 167, 42)
 }
+
+@media (min-width: 500px){
+    .productCard{
+
+        img{
+            width: 50%;
+        }
+
+        h3{
+            width: 50%;
+        }
+
+        p{
+            width: 50%;
+        }
+        div{
+            width: 50%;
+        }
+    }
+}
+
+@media (max-width: 501px){
+    .productCard{
+
+        img{
+            width: 100%;
+        }
+        p{
+            text-align: center;
+        }
+    }
+}
+
+
