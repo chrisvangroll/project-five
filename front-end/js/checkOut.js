@@ -1,9 +1,9 @@
 
 //references
-let formatter = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-  });
+// let formatter = new Intl.NumberFormat('en-US', {
+//     style: 'currency',
+//     currency: 'USD',
+//   });
 
 
 //call functions
@@ -125,8 +125,9 @@ function sumPrices (){
     for(let i=0; i < prices.length; i++){
         sum += parseInt(prices[i].textContent);
     }
-    total.textContent = formatter.format(sum);
+    total.textContent = money(sum);
 }
+
 
 
 
