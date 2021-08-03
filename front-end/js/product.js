@@ -1,9 +1,7 @@
-// Reference elements
 const addToCartBtn = document.getElementById('addToCart');
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get('id');
 
-//fetch data and call functions
 fetch('http://localhost:3000/api/furniture/' + id)
    .then(response => response.json())
    .then(data => {
@@ -18,7 +16,6 @@ fetch('http://localhost:3000/api/furniture/' + id)
         });
    });
 
-    //Create dropdown menu
  function dropDownMenu (product) {
     let dropDownSelect = `<select id='selectOption' class = 'w-25'>`; 
     let options = product; 
@@ -30,14 +27,12 @@ fetch('http://localhost:3000/api/furniture/' + id)
     return dropDownSelect;
 }
 
-//load cart number
 function loadCartNumbers() {
     if(getStorage()) {
       document.getElementById('cartNumber').textContent = getStorage().length;
     }
 }
 
-//item added to cart confirmation
 function popUp () {
     document.getElementById('popUp').classList.remove('popUp');
     document.getElementById('productDiv').style.display = 'none';
@@ -45,7 +40,6 @@ function popUp () {
     document.getElementsByTagName('footer')[0].style.display = 'none';
 }
   
-//Display Product 
     function render(product){
     let producto = document.createElement('div');
     producto.setAttribute('id', 'productDiv');
@@ -64,7 +58,6 @@ function popUp () {
             return producto;
     }
 
-//Add products to local storage
 function storeItem (data){
     let storage = getStorage();
     if(storage === null){
@@ -78,7 +71,7 @@ function storeItem (data){
         varnish : document.getElementById('selectOption').value,
     }
     storage.push(productInCart);
-    localStorage.setItem('product', JSON.stringify(storage));
+    setStorage(storage);
 }
 
   

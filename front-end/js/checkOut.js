@@ -1,31 +1,11 @@
-
-//call functions
 displayPurchase();
 addListenersToBins();
 sumPrices();
 
-//Event listener for submit button
 document.getElementById('submitBtn').addEventListener('click', (e)=>{
     let post = {contact: getContactInfo(), products: getProductIds()}
     submitFormData(post);
 });
-
-function submitFormData(data) {
-    fetch('http://localhost:3000/api/furniture/order', {
-      method: 'POST',
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(data)
-    }).then((response) => {
-      return response.json();
-    }).then((data) => {
-      console.log(data);
-      window.location = "confirmation.html?orderId=" + data.orderId;
-    }).catch((err) => {
-      console.log(err);
-    })
-  };
   
 function addListenersToBins (){
     let bins = document.querySelectorAll('i');
@@ -100,9 +80,26 @@ function removeItem(productId){
             storage.splice([i], 1);
         }
     }
-    localStorage.setItem('product', JSON.stringify(storage));
+    setStorage(storage);
     location.reload();
 }
+
+function submitFormData(data) {
+    fetch('http://localhost:3000/api/furniture/order', {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    }).then((response) => {
+      return response.json();
+    }).then((data) => {
+      console.log(data);
+      window.location = "confirmation.html?orderId=" + data.orderId;
+    }).catch((err) => {
+      console.log(err);
+    })
+  };
 
 function sumPrices() {
     const total = document.getElementById('total');
