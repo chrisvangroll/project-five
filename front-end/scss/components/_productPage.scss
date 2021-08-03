@@ -6,25 +6,6 @@
     @include buttonStyles;
 }
 
-.popUp{
-    display: none;
-    
-}
-
-.popUpNotRemoved{
-    position: relative;
-    top: 20vh;
-}
-
-.buttonStylesSquare{
-    @include buttonStylesSquare;
-    
-}
-
-.fa-check-circle{
- color: rgb(42, 167, 42)
-}
-
 @media (min-width: 500px){
     .productCard{
 

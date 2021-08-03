@@ -12,7 +12,6 @@ fetch('http://localhost:3000/api/furniture/' + id)
         addToCartBtn.addEventListener("click", () =>{
             storeItem(data);
             loadCartNumbers();
-            popUp();
         });
    });
 
@@ -33,13 +32,6 @@ function loadCartNumbers() {
     }
 }
 
-function popUp () {
-    document.getElementById('popUp').classList.remove('popUp');
-    document.getElementById('productDiv').style.display = 'none';
-    addToCartBtn.style.display='none';
-    document.getElementsByTagName('footer')[0].style.display = 'none';
-}
-  
     function render(product){
     let producto = document.createElement('div');
     producto.setAttribute('id', 'productDiv');

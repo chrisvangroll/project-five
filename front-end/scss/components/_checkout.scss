@@ -1,24 +1,29 @@
-.checkoutImage{
-    width: 50px
-}
-
-.fa-trash-alt{
-    color: red;
-    position: relative;
-    top: .25em;
-    
-    &:hover{
-        cursor: pointer;
+#confirmItems{
+    .checkoutImage{
+        width: 50px
     }
+
+    .fa-trash-alt{
+        color: red;
+        position: relative;
+        top: .25em;
+        
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+    .price{
+        width: 15%;
+    }
+    
+
 }
 
 .total{
     margin-right: 12vw;
 }
 
-.price{
-    width: 15%;
-}
 
 @media(max-width: 500px){
     .cartPage{

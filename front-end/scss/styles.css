@@ -34,6 +34,10 @@
   opacity: 0.8;
 }
 
+.indexPageHeader {
+  border-bottom: black solid 5px;
+}
+
 @media (max-width: 500px) {
   .orinoco {
     width: 175px;
@@ -50,11 +54,6 @@
   }
 }
 
-.cart {
-  display: flex;
-  justify-content: flex-end;
-}
-
 .badge {
   font-size: 25px;
   background: white;
@@ -67,10 +66,6 @@
 
 .fa-shopping-cart {
   color: #8952f9;
-}
-
-.indexPageHeader {
-  border-bottom: black solid 5px;
 }
 
 body {
@@ -123,33 +118,6 @@ footer {
   opacity: 0.8;
 }
 
-.popUp {
-  display: none;
-}
-
-.popUpNotRemoved {
-  position: relative;
-  top: 20vh;
-}
-
-.buttonStylesSquare {
-  background-color: #8952f9;
-  border: none;
-  padding: 10px 15px;
-  margin-top: 0px;
-  color: white;
-  font-weight: 600;
-  cursor: pointer;
-  margin-right: 6vw;
-}
-.buttonStylesSquare:hover {
-  opacity: 0.8;
-}
-
-.fa-check-circle {
-  color: #2aa72a;
-}
-
 @media (min-width: 500px) {
   .productCard img {
     width: 50%;
@@ -172,25 +140,23 @@ footer {
     text-align: center;
   }
 }
-.checkoutImage {
+#confirmItems .checkoutImage {
   width: 50px;
 }
-
-.fa-trash-alt {
+#confirmItems .fa-trash-alt {
   color: red;
   position: relative;
   top: 0.25em;
 }
-.fa-trash-alt:hover {
+#confirmItems .fa-trash-alt:hover {
   cursor: pointer;
+}
+#confirmItems .price {
+  width: 15%;
 }
 
 .total {
   margin-right: 12vw;
-}
-
-.price {
-  width: 15%;
 }
 
 @media (max-width: 500px) {
