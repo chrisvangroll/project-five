@@ -1,14 +1,10 @@
 
 //references
-const confirmItems = document.getElementById('confirmItems');
-const total = document.getElementById('total');
-const inputs = document.querySelectorAll('input');
-let contact = {};
 let formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
   });
-const postUrl = 'http://localhost:3000/api/furniture/order';
+
 
 //call functions
 displayPurchase();
@@ -17,7 +13,6 @@ sumPrices();
 
 //Event listener for submit button
 document.getElementById('submitBtn').addEventListener('click', (e)=>{
-    e.preventDefault();
     let post = {contact: getContactInfo(), products: getProductIds()}
     submitFormData(post);
 });
@@ -51,6 +46,7 @@ function addListenersToBins (){
 }
 
 function displayPurchase(){
+    const confirmItems = document.getElementById('confirmItems');
     let purchases = localStorage.getItem('product');
     purchases = JSON.parse(purchases);
     for (let i=0; i < purchases.length; i++){
@@ -76,6 +72,8 @@ function displayPurchase(){
 }
 
 function getContactInfo (){
+    const inputs = document.querySelectorAll('input');
+    let contact = {};
     for(let input of inputs){
        if(input.id == 'firstName'){
            contact[input.id] = input.value;
@@ -121,6 +119,7 @@ function removeItem(productId){
 }
 
 function sumPrices (){
+    const total = document.getElementById('total');
     const prices = document.querySelectorAll('.price');
     let sum = 0;
     for(let i=0; i < prices.length; i++){
