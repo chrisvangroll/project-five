@@ -30,12 +30,10 @@ fetch('http://localhost:3000/api/furniture/' + id)
     return dropDownSelect;
 }
 
-   function loadCartNumbers() {
-    const cartNumber = document.getElementById('cartNumber');
-    let productNumbers = localStorage.getItem('product');
-    if( productNumbers ) {
-      productNumbers = JSON.parse(productNumbers);
-      document.getElementById('cartNumber').textContent = productNumbers.length;
+//load cart number
+function loadCartNumbers() {
+    if(getStorage()) {
+      document.getElementById('cartNumber').textContent = getStorage().length;
     }
 }
 
@@ -68,8 +66,10 @@ function popUp () {
 
 //Add products to local storage
 function storeItem (data){
-    let storage = localStorage.getItem('product');
-    storage === null ? storage = [] : storage = JSON.parse(storage);
+    let storage = getStorage();
+    if(storage === null){
+        storage = [];
+    } 
     const productInCart = {
         id : data._id ,
         name : data.name ,

@@ -1,11 +1,15 @@
 loadCartNumbers()
 
 function loadCartNumbers() {
-    let productNumbers = localStorage.getItem('product');
-    if( productNumbers ) {
-      productNumbers = JSON.parse(productNumbers);
-      document.getElementById('cartNumber').textContent = productNumbers.length;
+    if(getStorage()) {
+      document.getElementById('cartNumber').textContent = getStorage().length;
     }
+}
+
+function getStorage (){
+    let productNumbers = localStorage.getItem('product');
+    productNumbers = JSON.parse(productNumbers);
+    return productNumbers;
 }
 
 function money (price){

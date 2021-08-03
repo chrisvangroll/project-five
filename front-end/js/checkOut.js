@@ -1,11 +1,4 @@
 
-//references
-// let formatter = new Intl.NumberFormat('en-US', {
-//     style: 'currency',
-//     currency: 'USD',
-//   });
-
-
 //call functions
 displayPurchase();
 addListenersToBins();
@@ -47,27 +40,24 @@ function addListenersToBins (){
 
 function displayPurchase(){
     const confirmItems = document.getElementById('confirmItems');
-    let purchases = localStorage.getItem('product');
-    purchases = JSON.parse(purchases);
-    for (let i=0; i < purchases.length; i++){
+    for (let i=0; i < getStorage().length; i++){
         let purchaseDiv = document.createElement('div');
         purchaseDiv.innerHTML = 
       `
         <div class='d-flex flex-row justify-content-end fs-5 mt-3'>
             <div class='w-25'>
-                <div class='fw-bold'>${purchases[i].name}</div>
+                <div class='fw-bold'>${getStorage()[i].name}</div>
             </div>
             <div class='w-25 d-flex justify-content-center'>
-                <img class='checkoutImage' src="${purchases[i].imageUrl}" alt="furniture">
+                <img class='checkoutImage' src="${getStorage()[i].imageUrl}" alt="furniture">
             </div>
-            <div class='w-25 d-flex justify-content-center me-2 fst-italic'>${purchases[i].varnish}</div>
-            <div class='price fs-5 fw-bold'>${money(purchases[i].price)} </div>
-            <i id='${purchases[i].id}' class="fas fa-trash-alt"></i>
+            <div class='w-25 d-flex justify-content-center me-2 fst-italic'>${getStorage()[i].varnish}</div>
+            <div class='price fs-5 fw-bold'>${money(getStorage()[i].price)} </div>
+            <i id='${getStorage()[i].id}' class="fas fa-trash-alt"></i>
         </div>
         `;
       confirmItems.insertBefore(purchaseDiv, confirmItems.childNodes[2]);
     } 
-    return purchases
 }
 
 function getContactInfo (){
@@ -94,18 +84,15 @@ function getContactInfo (){
 }
 
 function getProductIds (){
-    let storage = localStorage.getItem('product');
-    storage = JSON.parse(storage);
     let products =[];
-    for(let product of storage){
+    for(let product of getStorage()){
         products.push(product.id);
     }
     return products;
 }
 
 function removeItem(productId){
-    let storage = localStorage.getItem('product');
-    storage = JSON.parse(storage);
+    let storage = getStorage();
     let counter = 0;
     for(let i=0; i < storage.length; i++){
         if(storage[i].id == productId && counter === 0){
@@ -117,24 +104,11 @@ function removeItem(productId){
     location.reload();
 }
 
-// function sumPrices (){
-//     const total = document.getElementById('total');
-//     const prices = document.querySelectorAll('.price');
-//     let sum = 0;
-//     for(let i=0; i < prices.length; i++){
-//         sum += parseInt(prices[i].textContent);
-//     }
-//     total.textContent = money(sum);
-// }
-
 function sumPrices() {
     const total = document.getElementById('total');
-     let storage = localStorage.getItem('product');
-    let x ='aldjkf'
-     storage = JSON.parse(storage);
     let sum = 0;
-    if(storage){
-        for(let product of storage){
+    if(getStorage()){
+        for(let product of getStorage()){
             sum += parseInt(product.price);
         }
     }
