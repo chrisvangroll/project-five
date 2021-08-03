@@ -1,10 +1,24 @@
 // Reference elements
 const addToCartBtn = document.getElementById('addToCart');
-const cartNumber = document.getElementById('cartNumber');
-const divForBtn = document.getElementById('btnDiv');
-const varnishDropdown = document.getElementById('selectOption');
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get('id');
 
- //Create dropdown menu
+//fetch data and call functions
+fetch('http://localhost:3000/api/furniture/' + id)
+   .then(response => response.json())
+   .then(data => {
+        let item = render(data);
+        const divForBtn = document.getElementById('btnDiv');
+        document.querySelector('main').insertBefore(item, divForBtn);
+
+        addToCartBtn.addEventListener("click", () =>{
+            storeItem(data);
+            loadCartNumbers();
+            popUp();
+        });
+   });
+
+    //Create dropdown menu
  function dropDownMenu (product) {
     let dropDownSelect = `<select id='selectOption' class = 'w-25'>`; 
     let options = product; 
@@ -16,24 +30,8 @@ const varnishDropdown = document.getElementById('selectOption');
     return dropDownSelect;
 }
 
-//fetch data and call functions
-const urlParams = new URLSearchParams(window.location.search);
-const id = urlParams.get('id');
-
-fetch('http://localhost:3000/api/furniture/' + id)
-   .then(response => response.json())
-   .then(data => {
-        let item = render(data);
-        document.querySelector('main').insertBefore(item, divForBtn);
-
-        addToCartBtn.addEventListener("click", () =>{
-            storeItem(data);
-            loadCartNumbers();
-            popUp();
-        });
-   });
-
    function loadCartNumbers() {
+    const cartNumber = document.getElementById('cartNumber');
     let productNumbers = localStorage.getItem('product');
     if( productNumbers ) {
       productNumbers = JSON.parse(productNumbers);

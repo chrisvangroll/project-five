@@ -1,16 +1,17 @@
 
+  fetch('http://localhost:3000/api/furniture')
+   .then(response => response.json())
+   .then(data => {
+    displayProducts(data);
+   });
+
+   
 function displayProducts(data) {
   for (let i = 0; i < data.length; i++){
    let item = render(data[i]);
    document.getElementById('rowDiv').appendChild(item);
   }
 } 
-
-  fetch('http://localhost:3000/api/furniture')
-   .then(response => response.json())
-   .then(data => {
-    displayProducts(data);
-   });
 
   function render(product){
     let producto = document.createElement('div');

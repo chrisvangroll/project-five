@@ -38,35 +38,6 @@ function submitFormData(data) {
       console.log(err);
     })
   };
-
-// function makeRequest(data){
-//     return new Promise((resolve, reject)=>{
-//         let request = new XMLHttpRequest();
-//         request.open('POST', 'http://localhost:3000/api/furniture/order');
-//         request.onreadystatechange = () =>{
-//             if (request.readyState === 4){
-//                 if(request.status === 201){
-//                   resolve(JSON.parse(request.response));  
-//                 }
-//                 else{
-//                     reject(JSON.parse(request.response));
-//                 }
-//             }
-//         };
-//         request.setRequestHeader('Content-Type', 'application/json');
-//         request.send(JSON.stringify(data));
-//     });
-// }
-
-// async function submitFormData(post){
-//     try{
-//         const requestPromise = makeRequest(post);
-//         const response = await requestPromise;
-//         console.log(`this is the response: ${response}`);
-//     } catch (errorResponse) {
-//         console.log(errorResponse);
-//     }
-// }
   
 function addListenersToBins (){
     let bins = document.querySelectorAll('i');
