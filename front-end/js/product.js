@@ -4,22 +4,6 @@ const cartNumber = document.getElementById('cartNumber');
 const divForBtn = document.getElementById('btnDiv');
 const varnishDropdown = document.getElementById('selectOption');
 
-//add to cart total and display on page
-function addToCart(){
-    let productNumbers = localStorage.getItem('totalItems');
-    productNumbers = parseInt(productNumbers);
-
-
-   if (productNumbers){
-        localStorage.setItem('totalItems', productNumbers + 1);
-        cartNumber.textContent = productNumbers + 1;
-    }
-    else{
-        localStorage.setItem('totalItems', 1);
-        cartNumber.textContent = 1;
-    }
-}
-
  //Create dropdown menu
  function dropDownMenu (product) {
     let dropDownSelect = `<select id='selectOption' class = 'w-25'>`; 
@@ -43,11 +27,19 @@ fetch('http://localhost:3000/api/furniture/' + id)
         document.querySelector('main').insertBefore(item, divForBtn);
 
         addToCartBtn.addEventListener("click", () =>{
-            addToCart();
             storeItem(data);
+            loadCartNumbers();
             popUp();
         });
    });
+
+   function loadCartNumbers() {
+    let productNumbers = localStorage.getItem('product');
+    if( productNumbers ) {
+      productNumbers = JSON.parse(productNumbers);
+      document.getElementById('cartNumber').textContent = productNumbers.length;
+    }
+}
 
 //item added to cart confirmation
 function popUp () {

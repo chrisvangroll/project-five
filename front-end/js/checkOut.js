@@ -148,13 +148,6 @@ function removeItem(productId){
     location.reload();
 }
 
-function subtractCartNumber(){
-    let productNumbers = localStorage.getItem('totalItems');
-    productNumbers = parseInt(productNumbers);
-    localStorage.setItem('totalItems', productNumbers - 1);
-    cartNumber.textContent = productNumbers - 1;
-}
-
 function sumPrices (){
     const prices = document.querySelectorAll('.price');
     let sum = 0;
