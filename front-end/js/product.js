@@ -60,7 +60,7 @@ function popUp () {
                 <label class= 'fs-4 fw-bold' for='varnish'>Choose a Varnish:</label>
                 ${dropDownMenu(product.varnish)}
             </div>
-            <div class='price mb-3 mx-auto fs-4 fw-bold'>$${product.price/100} </div>
+            <div class='price mb-3 mx-auto fs-4 fw-bold'>${money(product.price/100)} </div>
         </div>`;
 
             return producto;

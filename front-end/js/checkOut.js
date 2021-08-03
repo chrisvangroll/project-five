@@ -61,8 +61,7 @@ function displayPurchase(){
                 <img class='checkoutImage' src="${purchases[i].imageUrl}" alt="furniture">
             </div>
             <div class='w-25 d-flex justify-content-center me-2 fst-italic'>${purchases[i].varnish}</div>
-            <div class='fw-bold'>$</div>
-            <div class='price fs-5 fw-bold'>${purchases[i].price} </div>
+            <div class='price fs-5 fw-bold'>${money(purchases[i].price)} </div>
             <i id='${purchases[i].id}' class="fas fa-trash-alt"></i>
         </div>
         `;
@@ -118,16 +117,29 @@ function removeItem(productId){
     location.reload();
 }
 
-function sumPrices (){
+// function sumPrices (){
+//     const total = document.getElementById('total');
+//     const prices = document.querySelectorAll('.price');
+//     let sum = 0;
+//     for(let i=0; i < prices.length; i++){
+//         sum += parseInt(prices[i].textContent);
+//     }
+//     total.textContent = money(sum);
+// }
+
+function sumPrices() {
     const total = document.getElementById('total');
-    const prices = document.querySelectorAll('.price');
+     let storage = localStorage.getItem('product');
+    let x ='aldjkf'
+     storage = JSON.parse(storage);
     let sum = 0;
-    for(let i=0; i < prices.length; i++){
-        sum += parseInt(prices[i].textContent);
+    if(storage){
+        for(let product of storage){
+            sum += parseInt(product.price);
+        }
     }
     total.textContent = money(sum);
 }
-
 
 
 
