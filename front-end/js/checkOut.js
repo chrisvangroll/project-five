@@ -16,9 +16,9 @@ addListenersToBins();
 sumPrices();
 
 //Event listener for submit button
-document.getElementById('submitBtn').addEventListener('submit', (e)=>{
+document.getElementById('submitBtn').addEventListener('click', (e)=>{
     e.preventDefault();
-    let post = {contact: getContactInfo(), product: getProductIds()}
+    let post = {contact: getContactInfo(), products: getProductIds()}
     submitFormData(post);
 });
 
@@ -33,6 +33,7 @@ function submitFormData(data) {
       return response.json();
     }).then((data) => {
       console.log(data);
+      window.location = "confirmation.html?orderId=" + data.orderId;
     }).catch((err) => {
       console.log(err);
     })
