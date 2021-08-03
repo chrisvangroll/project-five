@@ -1,4 +1,3 @@
-loadCartNumbers()
 
 function displayProducts(data) {
   for (let i = 0; i < data.length; i++){
@@ -12,13 +11,6 @@ function displayProducts(data) {
    .then(data => {
     displayProducts(data);
    });
-
-  function loadCartNumbers() {
-    let productNumbers = localStorage.getItem('totalItems');
-    if( productNumbers ) {
-      document.getElementById('cartNumber').textContent = productNumbers;
-    }
-}
 
   function render(product){
     let producto = document.createElement('div');
@@ -37,7 +29,6 @@ function displayProducts(data) {
           </div>
         </a>
       </div>`;
-//<a href="product.html?id=${product._id}" class="btn btn-primary mt-2 cardBtn fs-5">See Product</a>
           return producto;
   }
 

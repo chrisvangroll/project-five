@@ -13,14 +13,12 @@ const postUrl = 'http://localhost:3000/api/furniture/order';
 //call functions
 displayPurchase();
 addListenersToBins();
-loadCartNumbers();
 sumPrices();
 
 //Event listener for submit button
 document.getElementById('submitBtn').addEventListener('submit', (e)=>{
     e.preventDefault();
     let post = {contact: getContactInfo(), product: getProductIds()}
-    //console.log(post);
     submitFormData(post);
 });
 
@@ -134,13 +132,6 @@ function getProductIds (){
         products.push(product.id);
     }
     return products;
-}
-
-function loadCartNumbers() {
-    let productNumbers = localStorage.getItem('totalItems');
-    if( productNumbers ) {
-        cartNumber.textContent = productNumbers;
-    }
 }
 
 function removeItem(productId){

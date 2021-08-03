@@ -4,8 +4,6 @@ const cartNumber = document.getElementById('cartNumber');
 const divForBtn = document.getElementById('btnDiv');
 const varnishDropdown = document.getElementById('selectOption');
 
-loadCartNumbers()
-
 //add to cart total and display on page
 function addToCart(){
     let productNumbers = localStorage.getItem('totalItems');
@@ -50,14 +48,6 @@ fetch('http://localhost:3000/api/furniture/' + id)
             popUp();
         });
    });
-
- //Display cart number when browser refreshes
- function loadCartNumbers() {
-    let productNumbers = localStorage.getItem('totalItems');
-    if( productNumbers ) {
-        cartNumber.textContent = productNumbers;
-    }
-}
 
 //item added to cart confirmation
 function popUp () {
