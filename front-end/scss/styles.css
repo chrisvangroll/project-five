@@ -74,7 +74,14 @@ body {
   margin: 0;
 }
 
-.cards a {
+.cards .item {
+  color: black;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.cards .item:hover {
+  background-color: #8952f938;
+}
+.cards .item a {
   color: black;
 }
 .cards .cardBtn {
@@ -155,6 +162,20 @@ footer {
   width: 15%;
 }
 
+.buttonStylesSquare {
+  background-color: #8952f9;
+  border: none;
+  padding: 10px 15px;
+  margin-top: 0px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 6vw;
+}
+.buttonStylesSquare:hover {
+  opacity: 0.8;
+}
+
 .total {
   margin-right: 12vw;
 }
@@ -169,4 +190,7 @@ footer {
   .cartPage p {
     margin-top: 40px;
   }
+}
+.confirmationMain {
+  height: 100vh;
 }/*# sourceMappingURL=styles.css.map */

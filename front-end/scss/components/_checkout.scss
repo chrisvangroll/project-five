@@ -20,6 +20,10 @@
 
 }
 
+.buttonStylesSquare{
+    @include buttonStylesSquare;
+}
+
 .total{
     margin-right: 12vw;
 }

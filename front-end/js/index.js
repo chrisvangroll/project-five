@@ -18,7 +18,6 @@ function displayProducts(data) {
     producto.classList.add('col-sm-12', 'col-md-6', 'mb-5', 'col-lg-4', 'cards');
     producto.innerHTML = 
       `
-      <div>
         <a class = 'text-decoration-none' href='product.html?id=${product._id}' id='${product._id}'>
           <div class= 'item card'>
             <img class='card-img-top' src="${product.imageUrl}" alt="furniture">
@@ -28,8 +27,7 @@ function displayProducts(data) {
               <div class='fs-5 fw-bold'>$${product.price/100} </div>
             </div>
           </div>
-        </a>
-      </div>`;
+        </a>`;
           return producto;
   }
 
