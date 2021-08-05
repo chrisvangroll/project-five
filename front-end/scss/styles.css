@@ -124,6 +124,17 @@ footer {
   border-bottom: black solid 5px;
 }
 
+.itemAdded {
+  transform: translateY(-500px);
+}
+
+.animateBox {
+  transform: translateY(0px);
+  transition-delay: 1000ms;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+}
+
 .buttonStyles {
   background-color: #8952f9;
   border: none;

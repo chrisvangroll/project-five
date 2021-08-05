@@ -30,7 +30,7 @@ const furnitures = [
       "Mahogany"
     ],
     "_id": "5beaae361c9d440000a57d99",
-    "name": "Dining Table (extendable)",
+    "name": "Dining Table",
     "price": 109900,
     "imageUrl": "oak_3.jpg",
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."

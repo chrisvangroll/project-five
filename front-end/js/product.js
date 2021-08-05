@@ -12,6 +12,7 @@ fetch('http://localhost:3000/api/furniture/' + id)
         addToCartBtn.addEventListener("click", () =>{
             storeItem(data);
             loadCartNumbers();
+            popUp();
         });
    });
 
@@ -30,6 +31,11 @@ function loadCartNumbers() {
     if(getStorage()) {
       document.getElementById('cartNumber').textContent = getStorage().length;
     }
+}
+
+function popUp(){
+    const popUp = document.querySelectorAll('.itemAdded')[0];
+    popUp.classList.add("animateBox");
 }
 
     function render(product){
