@@ -31,3 +31,11 @@
         opacity: .8;
     }
 }
+
+@mixin widths {
+    width: 80vh;
+}
+
+@mixin tabletWidth {
+    width: 70vw;  
+}

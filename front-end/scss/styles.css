@@ -106,6 +106,20 @@ footer {
     flex-direction: row;
   }
 }
+.pageContainer {
+  position: relative;
+  min-height: 100vh;
+}
+.pageContainer .contentWrap {
+  padding-bottom: 8rem;
+}
+.pageContainer .productPageFooter {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 8rem;
+}
+
 .productPageHeader {
   border-bottom: black solid 5px;
 }
@@ -125,18 +139,41 @@ footer {
   opacity: 0.8;
 }
 
-@media (min-width: 500px) {
-  .productCard img {
-    width: 50%;
+@media (min-width: 1101px) {
+  main {
+    height: 100%;
+    margin-top: 6vh;
   }
-  .productCard h3 {
-    width: 50%;
+  main .productCard img {
+    width: 80vh;
   }
-  .productCard p {
-    width: 50%;
+  main .productCard h3 {
+    width: 80vh;
   }
-  .productCard div {
-    width: 50%;
+  main .productCard p {
+    width: 80vh;
+  }
+  main .productCard div {
+    width: 80vh;
+  }
+}
+@media (max-width: 1100px) {
+  main {
+    height: 100%;
+    margin-top: 6vh;
+  }
+  main .productCard img {
+    margin-top: 5vh;
+    width: 70vw;
+  }
+  main .productCard h3 {
+    width: 70vw;
+  }
+  main .productCard p {
+    width: 70vw;
+  }
+  main .productCard div {
+    width: 70vw;
   }
 }
 @media (max-width: 501px) {
