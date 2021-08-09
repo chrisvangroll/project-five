@@ -254,6 +254,14 @@ footer {
   margin-right: 12vw;
 }
 
+input {
+  margin-bottom: 20px;
+}
+
+select {
+  margin-bottom: 20px;
+}
+
 @media (max-width: 500px) {
   .cartPage {
     flex-direction: column-reverse;
