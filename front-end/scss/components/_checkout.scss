@@ -1,39 +1,44 @@
-.cartDiv{
- background-color: white;
- padding: .4em;
- border: solid $orange;
-}
-#confirmItems{
-    .checkoutImage{
-        width: 50px
-    }
+.checkoutMain{
+    padding: 0px 10px;
 
-    .fa-trash-alt{
-        color: red;
-        font-size: 1.5em;
+    .cartDiv{
+        background-color: white;
+        padding: .4em;
+        border: solid $orange;
+       }
+       #confirmItems{
+           .checkoutImage{
+               width: 50px
+           }
+       
+           .fa-trash-alt{
+               color: red;
+               font-size: 1.5em;
+               
+               &:hover{
+                   cursor: pointer;
+               }
+           }
+       
+       
+       }
+       
+       .buttonStylesSquare{
+           @include buttonStylesSquare;
+       }
+       
+       .total{
+           margin-right: 12vw;
+       }
+       
+       input{
+           margin-bottom: 20px;
+       }
+       
+       select{
+           margin-bottom: 20px;
+       }
         
-        &:hover{
-            cursor: pointer;
-        }
-    }
-
-
-}
-
-.buttonStylesSquare{
-    @include buttonStylesSquare;
-}
-
-.total{
-    margin-right: 12vw;
-}
-
-input{
-    margin-bottom: 20px;
-}
-
-select{
-    margin-bottom: 20px;
 }
 
 

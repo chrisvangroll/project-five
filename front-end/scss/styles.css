@@ -129,7 +129,7 @@ footer {
 .pageContainer .contentWrap {
   padding-bottom: 8rem;
 }
-.pageContainer .productPageFooter {
+.pageContainer .pageFooter {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -221,24 +221,25 @@ footer {
     text-align: center;
   }
 }
-.cartDiv {
+.checkoutMain {
+  padding: 0px 10px;
+}
+.checkoutMain .cartDiv {
   background-color: white;
   padding: 0.4em;
   border: solid #d68040;
 }
-
-#confirmItems .checkoutImage {
+.checkoutMain #confirmItems .checkoutImage {
   width: 50px;
 }
-#confirmItems .fa-trash-alt {
+.checkoutMain #confirmItems .fa-trash-alt {
   color: red;
   font-size: 1.5em;
 }
-#confirmItems .fa-trash-alt:hover {
+.checkoutMain #confirmItems .fa-trash-alt:hover {
   cursor: pointer;
 }
-
-.buttonStylesSquare {
+.checkoutMain .buttonStylesSquare {
   background-color: #8952f9;
   border: none;
   padding: 10px 15px;
@@ -248,19 +249,16 @@ footer {
   cursor: pointer;
   margin-right: 6vw;
 }
-.buttonStylesSquare:hover {
+.checkoutMain .buttonStylesSquare:hover {
   opacity: 0.8;
 }
-
-.total {
+.checkoutMain .total {
   margin-right: 12vw;
 }
-
-input {
+.checkoutMain input {
   margin-bottom: 20px;
 }
-
-select {
+.checkoutMain select {
   margin-bottom: 20px;
 }
 
