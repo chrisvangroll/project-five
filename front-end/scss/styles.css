@@ -224,6 +224,9 @@ footer {
 .checkoutMain {
   padding: 0px 10px;
 }
+.checkoutMain form {
+  padding: 0px;
+}
 .checkoutMain .cartDiv {
   background-color: white;
   padding: 0.4em;
@@ -247,7 +250,7 @@ footer {
   color: white;
   font-weight: 600;
   cursor: pointer;
-  margin-right: 6vw;
+  margin-left: 0px;
 }
 .checkoutMain .buttonStylesSquare:hover {
   opacity: 0.8;
