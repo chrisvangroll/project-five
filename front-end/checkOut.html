@@ -38,18 +38,18 @@
       <main class='checkoutMain'>
         <div class="container">
           <div class="d-flex row cartPage">
-              <form class='md-w-50 col-md-6 fs-4' action="">
+              <form id='clientForm' class='md-w-50 col-md-6 fs-4'>
                   <div class='fs-3 fw-bold mb-3'>Billing Address</div>
                   <div class="d-flex row">
-                    <input class='mb-3 col-md-5 me-3' id='firstName' type="text" placeholder="First Name" name = 'buyerInfo' required>
-                    <input class='mb-3 col-md-5' id='lastName' type="text" placeholder="Last Name" name = 'buyerInfo' required >
+                    <input class='mb-3 col-md-5 me-3' id='firstName' title= 'First Name' type="text" placeholder="First Name" name = 'buyerInfo' required>
+                    <input class='mb-3 col-md-5' id='lastName' title='Last Name' type="text" placeholder="Last Name" name = 'buyerInfo' required >
                   </div>
                   <div class="d-flex row">
-                    <input class= 'col-md-6 mb-3 me-3' id='address' placeholder="Address" type="text" name = 'buyerInfo' required >
-                    <input class= 'col-md-4 mb-3' id='city' type="text" name = 'buyerInfo' placeholder= "City" required> 
+                    <input class= 'col-md-6 mb-3 me-3' id='address'  title='Address' placeholder="Address" type="text" name = 'buyerInfo' required >
+                    <input class= 'col-md-4 mb-3' id='city'  title='City' type="text" name = 'buyerInfo' placeholder= "City" required> 
                   </div>
                   <div class="d-flex row">
-                    <select class="col-md-5 me-3" id='state' required>
+                    <select class="col-md-5 me-3" id='state'  title='State' required>
                       <option value="">Select State</option>
                       <option value="AL">Alabama</option>
                       <option value="AK">Alaska</option>
@@ -103,21 +103,21 @@
                       <option value="WI">Wisconsin</option>
                       <option value="WY">Wyoming</option>
                     </select>
-                    <input  class="col-md-5" id='zipCode' type="text" name = 'buyerInfo' placeholder= "Zip Code" required> 
+                    <input  class="col-md-5" id='zipCode'  title='Zip Code' type="text" name = 'buyerInfo' placeholder= "Zip Code" required> 
                   </div>
                   <p class='fs-3 fw-bold'>Contact Information</p>	
                   <div class="row">
-                    <input class='col-md-6 mb-3' id='email'pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" type="text" name = 'buyerInfo' placeholder="Email" required>
+                    <input class='col-md-6 mb-3' id='email'  title='Email' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" type="text" name = 'buyerInfo' placeholder="Email" required>
                   </div>
                   <div class="row">
-                    <input class="col-md-6" id='phoneNumber'pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Phone: 123-456-7899" type="tel" name = 'buyerInfo' required>
+                    <input class="col-md-6" id='phoneNumber'  title='Phone Number' pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Phone: 123-456-7899" type="tel" name = 'buyerInfo' required>
                   </div>
                   <input id ='submitBtn' class= 'mt-2 buttonStylesSquare' type="submit" value='Place Your Order'>
               </form>
-               <div id='confirmItems'class='col-md-6'>
+               <div id='confirmItems' class='col-md-6'>
                  <div class='fw-bold fs-3 text-center mb-3'>Cart Items</div>
                  <div class="d-flex justify-content-end mt-2 total w-100">
-                  <div class=" fw-bold fs-4 py-1">
+                  <div class=" fw-bold fs-4 py-1 mb-3">
                     Total: <span id='total'></span>
                   </div>
                  </div>
@@ -135,6 +135,7 @@
         <div class = 'ms-5 me-5 mb-2 text-center'>Locations</div>
         <div class = 'ms-5 me-5 mb-2 text-center'>Hours of Operation</div>
         <div class = 'ms-5 me-5 mb-2 text-center'>Contact Us</div>
+      </div>
     </footer>
   </div>
     
