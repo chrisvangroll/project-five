@@ -1,3 +1,8 @@
+.cartDiv{
+ background-color: white;
+ padding: .4em;
+ border: solid $orange;
+}
 #confirmItems{
     .checkoutImage{
         width: 50px
@@ -5,18 +10,13 @@
 
     .fa-trash-alt{
         color: red;
-        position: relative;
-        top: .25em;
+        font-size: 1.5em;
         
         &:hover{
             cursor: pointer;
         }
     }
 
-    .price{
-        width: 15%;
-    }
-    
 
 }
 

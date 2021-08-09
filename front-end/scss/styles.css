@@ -221,19 +221,21 @@ footer {
     text-align: center;
   }
 }
+.cartDiv {
+  background-color: white;
+  padding: 0.4em;
+  border: solid #d68040;
+}
+
 #confirmItems .checkoutImage {
   width: 50px;
 }
 #confirmItems .fa-trash-alt {
   color: red;
-  position: relative;
-  top: 0.25em;
+  font-size: 1.5em;
 }
 #confirmItems .fa-trash-alt:hover {
   cursor: pointer;
-}
-#confirmItems .price {
-  width: 15%;
 }
 
 .buttonStylesSquare {

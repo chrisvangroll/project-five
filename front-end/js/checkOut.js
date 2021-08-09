@@ -23,18 +23,24 @@ function displayPurchase(){
     for (let i=0; i < getStorage().length; i++){
         let purchaseDiv = document.createElement('div');
         purchaseDiv.innerHTML = 
-      `
-        <div class='d-flex flex-row justify-content-end fs-5 mt-3'>
-            <div class='w-25'>
-                <div class='fw-bold'>${getStorage()[i].name}</div>
+      `<div class='d-flex cartDiv row mb-3'>
+            <div class ='col-11'>
+                <div class='d-flex  fs-4 row'>
+                    <div class="d-flex align-items-center  col-12 col-lg-6">
+                        <div class='fw-bold '>${getStorage()[i].name} <span class='fst-italic fw-normal'>(${getStorage()[i].varnish})</span></div>
+                    </div>
+                    <img class='col-3' src="${getStorage()[i].imageUrl}" alt="furniture">
+                    <div class="d-flex justify-content-center align-items-center col-3">
+                        <div class='fs-4 fw-bold '>${money(getStorage()[i].price)} </div>
+                    </div>
+                </div>
             </div>
-            <div class='w-25 d-flex justify-content-center'>
-                <img class='checkoutImage' src="${getStorage()[i].imageUrl}" alt="furniture">
+            <div class="d-flex justify-content-center align-items-center col-1">
+                <i id='${getStorage()[i].id}' class="fas fa-trash-alt"></i>
             </div>
-            <div class='w-25 d-flex justify-content-center me-2 fst-italic'>${getStorage()[i].varnish}</div>
-            <div class='price fs-5 fw-bold'>${money(getStorage()[i].price)} </div>
-            <i id='${getStorage()[i].id}' class="fas fa-trash-alt"></i>
         </div>
+        
+        
         `;
       confirmItems.insertBefore(purchaseDiv, confirmItems.childNodes[2]);
     } 
