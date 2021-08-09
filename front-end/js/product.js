@@ -35,7 +35,10 @@ function loadCartNumbers() {
 
 function popUp(){
     const popUp = document.querySelectorAll('.itemAdded')[0];
-    popUp.classList.add("animateBox");
+    popUp.classList.add("animateBox", "fadeOut");
+    setTimeout(()=>{
+        location.reload()
+    }, 2500);
 }
 
     function render(product){

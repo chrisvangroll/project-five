@@ -21,13 +21,24 @@
 
 .itemAdded{
     transform: translateY(-500px);
+    background-color: rgb(37, 161, 37);
+    opacity: 1;
+
+    .message{
+        color: white;
+    }
 }
+
 
 .animateBox{
     transform: translateY(0px);
-    transition-delay: 1000ms;
-    transition-duration: 1s;
-    transition-timing-function: ease-in-out;
+    transition-delay: 200ms;
+    transition-duration: .25s;
+    transition-timing-function: ease-in-out;  
+}
+
+.fadeOut{ 
+    animation: fadeOut 400ms 1.4s forwards;
 }
 
 .buttonStyles{

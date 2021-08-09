@@ -1,3 +1,19 @@
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 .headr {
   background-image: url(../../back-end/images/background.webp);
   height: 84vh;
@@ -126,13 +142,23 @@ footer {
 
 .itemAdded {
   transform: translateY(-500px);
+  background-color: #25a125;
+  opacity: 1;
+}
+.itemAdded .message {
+  color: white;
 }
 
 .animateBox {
   transform: translateY(0px);
-  transition-delay: 1000ms;
-  transition-duration: 1s;
+  transition-delay: 200ms;
+  transition-duration: 0.25s;
   transition-timing-function: ease-in-out;
+}
+
+.fadeOut {
+  -webkit-animation: fadeOut 400ms 1.4s forwards;
+          animation: fadeOut 400ms 1.4s forwards;
 }
 
 .buttonStyles {
