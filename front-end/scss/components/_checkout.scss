@@ -3,6 +3,15 @@
 
     form{
         padding: 0px;
+
+        .badInput{
+            color: red;
+            font-size: .8em;
+            display: none;
+        }
+        .formMargin{
+            margin-bottom: 12px;
+        }
     }
 
     .cartDiv{

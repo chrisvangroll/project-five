@@ -4,9 +4,14 @@ sumPrices();
 
 document.getElementById('submitBtn').addEventListener('click', (e)=>{
     let post = {contact: getContactInfo(), products: getProductIds()}
-    submitFormData(post);
+    validateForm()
+    if(validateForm() !== false){
+        submitFormData(post);
+    }
+        
+    
 });
-  
+
 function addListenersToBins (){
     let bins = document.querySelectorAll('i');
     for(let bin of bins){
@@ -44,6 +49,12 @@ function displayPurchase(){
         `;
       confirmItems.insertBefore(purchaseDiv, confirmItems.childNodes[2]);
     } 
+}
+
+function errorMessage(input){
+    input.nextElementSibling.style.display = 'block';
+    input.style.border = '1px solid #f00';
+    return false
 }
 
 function getContactInfo (){
@@ -117,6 +128,50 @@ function sumPrices() {
     }
     total.textContent = money(sum);
 }
+
+function validateForm(){
+    let form = document.customForm;
+    let firstName = document.customForm.firstName;
+    let lastName = document.customForm.lastName;
+    let address = document.customForm.address;
+    let city = document.customForm.city;
+    let state = document.customForm.state;
+    let zipCode = document.customForm.zipCode;
+    let email = document.customForm.email;
+    let phone = document.customForm.phone;
+
+    if(firstName.value == "") {
+       return errorMessage(firstName) 
+    } 
+
+    if(lastName.value == "") {
+        return errorMessage(lastName) 
+     } 
+    
+    if(address.value == "") {
+        return errorMessage(address) 
+    } 
+    if(city.value == "") {
+    return errorMessage(city) 
+    } 
+
+    if(state.value == "Select State") {
+    return errorMessage(lastName) 
+    } 
+
+    if(zipCode.value == "") {
+        return errorMessage(zipCode) 
+    } 
+
+    if(email.value == "") {
+        return errorMessage(email) 
+    } 
+
+    if(phone.value == "") {
+        return errorMessage(phone) 
+        } 
+}
+
 
 
 

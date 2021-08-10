@@ -227,6 +227,14 @@ footer {
 .checkoutMain form {
   padding: 0px;
 }
+.checkoutMain form .badInput {
+  color: red;
+  font-size: 0.8em;
+  display: none;
+}
+.checkoutMain form .formMargin {
+  margin-bottom: 12px;
+}
 .checkoutMain .cartDiv {
   background-color: white;
   padding: 0.4em;
