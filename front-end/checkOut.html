@@ -125,16 +125,18 @@
                   </div>
                   <p class='fs-3 fw-bold'>Contact Information</p>	
                   <div class="row">
-                    <div  class='col-md-6'>
-                      <input id='email' name='email'  title='Email' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" type="text" name = 'buyerInfo' placeholder="Email">
+                    <div  class='col-md-6 formMargin'>
+                      <input class='mb-0' id='email' name='email'  title='Email' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" type="text" name = 'buyerInfo' placeholder="Email">
+                      <div class="badInput">Please input a valid email</div>
                     </div>
                   </div>
                   <div class="row">
-                    <div  class="col-md-6">
-                      <input id='phoneNumber' name='phone' title='Phone Number' pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Phone: 123-456-7899" type="tel" name = 'buyerInfo'>
+                    <div  class="col-md-6 formMargin">
+                      <input class= 'mb-0' id='phoneNumber' name='phone' title='Phone Number' pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Phone: 123-456-7899" type="tel" name = 'buyerInfo'>
+                      <div class="badInput">Please input a valid phone number</div>
                     </div>
                   </div>
-                  <input id ='submitBtn' class= 'mt-2 buttonStylesSquare text-center' value='Place Your Order'>
+                  <div id ='submitBtn' class= 'mt-2 buttonStylesSquare text-center d-inline-block'>Place Your Order</div>
               </form>
                <div id='confirmItems' class='col-md-6'>
                  <div class='fw-bold fs-3 text-center mb-3'>Cart Items</div>

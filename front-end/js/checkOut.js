@@ -4,7 +4,6 @@ sumPrices();
 
 document.getElementById('submitBtn').addEventListener('click', (e)=>{
     let post = {contact: getContactInfo(), products: getProductIds()}
-    validateForm()
     if(validateForm() !== false){
         submitFormData(post);
     }
@@ -55,6 +54,11 @@ function errorMessage(input){
     input.nextElementSibling.style.display = 'block';
     input.style.border = '1px solid #f00';
     return false
+}
+
+function errorMessageNone(input){
+    input.nextElementSibling.style.display = 'none';
+    input.style.border = '1px solid transparent';
 }
 
 function getContactInfo (){
@@ -130,48 +134,47 @@ function sumPrices() {
 }
 
 function validateForm(){
-    let form = document.customForm;
-    let firstName = document.customForm.firstName;
-    let lastName = document.customForm.lastName;
-    let address = document.customForm.address;
-    let city = document.customForm.city;
-    let state = document.customForm.state;
-    let zipCode = document.customForm.zipCode;
-    let email = document.customForm.email;
-    let phone = document.customForm.phone;
+    const form = document.customForm;
+    const inputObj = {
+        firstName: document.customForm.firstName,
+        lastName: document.customForm.lastName,
+        address: document.customForm.address,
+        city: document.customForm.city,
+        state: document.customForm.state
+    }
+    const zipCode = document.customForm.zipCode;
+    const email = document.customForm.email;
+    const phone = document.customForm.phone;
 
-    if(firstName.value == "") {
-       return errorMessage(firstName) 
-    } 
+    for(let element in inputObj){
+        if(inputObj[element].value == ""){
+           return errorMessage(inputObj[element])
+        }
+        else{
+            errorMessageNone(inputObj[element])
+        }
+    }
 
-    if(lastName.value == "") {
-        return errorMessage(lastName) 
-     } 
-    
-    if(address.value == "") {
-        return errorMessage(address) 
-    } 
-    if(city.value == "") {
-    return errorMessage(city) 
-    } 
+     if(!zipCode.value.match(/^\d{5}$|^\d{5}-\d{4}$/)){
+        return errorMessage(zipCode)
+     }else{
+        errorMessageNone(zipCode);
+     }  
+     
+     if(!email.value.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)){
+       return errorMessage(email)
+     }else{
+        errorMessageNone(email);
+     }   
 
-    if(state.value == "Select State") {
-    return errorMessage(lastName) 
-    } 
+     if(!phone.value.match(/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/)){
+        return errorMessage(phone)
+     }else{
+        errorMessageNone(phone);
+     }   
+ }
 
-    if(zipCode.value == "") {
-        return errorMessage(zipCode) 
-    } 
+ 
 
-    if(email.value == "") {
-        return errorMessage(email) 
-    } 
-
-    if(phone.value == "") {
-        return errorMessage(phone) 
-        } 
-}
-
-
-
+ //!phone.value.match(/^\([0-9]{3}\)[0-9]{3}-[0-9]{4}$/)
 
