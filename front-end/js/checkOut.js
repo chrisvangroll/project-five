@@ -106,7 +106,7 @@ function removeItem(productId){
 }
 
 function submitFormData(data) {
-    fetch('http://localhost:3000/api/furniture/order', {
+    fetch('http://localhost:3000/api/cameras/order', {
       method: 'POST',
       headers: {
         "Content-Type": "application/json"

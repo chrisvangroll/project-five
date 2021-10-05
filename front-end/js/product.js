@@ -2,13 +2,12 @@ const addToCartBtn = document.getElementById('addToCart');
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get('id');
 
-fetch('http://localhost:3000/api/furniture/' + id)
+fetch('http://localhost:3000/api/cameras/' + id)
    .then(response => response.json())
    .then(data => {
         let item = render(data);
         const divForBtn = document.getElementById('btnDiv');
         document.querySelector('main').insertBefore(item, divForBtn);
-
         addToCartBtn.addEventListener("click", () =>{
             storeItem(data);
             loadCartNumbers();
@@ -18,7 +17,8 @@ fetch('http://localhost:3000/api/furniture/' + id)
 
  function dropDownMenu (product) {
     let dropDownSelect = `<select id='selectOption' class = 'w-25'>`; 
-    let options = product; 
+    let options = product;
+    
 
     for(let i = 0; i < options.length; i++) {
         dropDownSelect += `<option value = '${options[i]}' class ='fs-5'>${options[i]}</option>`;
@@ -51,7 +51,7 @@ function popUp(){
             <p class='description  mx-auto fs-4'>${product.description}</p>
             <div class = 'mx-auto'>
                 <label class= 'fs-4 fw-bold' for='varnish'>Choose a Varnish:</label>
-                ${dropDownMenu(product.varnish)}
+                ${dropDownMenu(product.lenses)}
             </div>
             <div class='price mb-3 mx-auto fs-4 fw-bold'>${money(product.price/100)} </div>
         </div>`;

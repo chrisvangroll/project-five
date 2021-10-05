@@ -15,8 +15,13 @@
   }
 }
 .headr {
-  background-image: url(../../back-end/images/background.webp);
-  height: 84vh;
+  background-image: url(../../back-end/images/vcam_1.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #4e4e4e;
+  background-blend-mode: multiply;
+  height: 89vh;
 }
 .headr h1 {
   color: white;
@@ -36,7 +41,7 @@
   border: none;
 }
 .headr .buttonStyles {
-  background-color: #8952f9;
+  background: linear-gradient(220deg, #8952f9, #d68040);
   border: none;
   padding: 10px 15px;
   border-radius: 5vw;
@@ -48,10 +53,6 @@
 }
 .headr .buttonStyles:hover {
   opacity: 0.8;
-}
-
-.indexPageHeader {
-  border-bottom: black solid 5px;
 }
 
 @media (max-width: 500px) {
@@ -86,7 +87,7 @@
 
 body {
   background-color: #e9ecef;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Lora", serif;
   margin: 0;
 }
 
@@ -162,7 +163,7 @@ footer {
 }
 
 .buttonStyles {
-  background-color: #8952f9;
+  background: linear-gradient(220deg, #8952f9, #d68040);
   border: none;
   padding: 10px 15px;
   border-radius: 5vw;
@@ -200,7 +201,6 @@ footer {
     margin-top: 6vh;
   }
   main .productCard img {
-    margin-top: 5vh;
     width: 70vw;
   }
   main .productCard h3 {
@@ -258,7 +258,6 @@ footer {
   color: white;
   font-weight: 600;
   cursor: pointer;
-  margin-left: 0px;
 }
 .checkoutMain .buttonStylesSquare:hover {
   opacity: 0.8;
@@ -279,6 +278,10 @@ footer {
   }
   .cartPage form {
     margin-top: 40px;
+    margin-bottom: 15px;
+  }
+  .cartPage form input {
+    width: 100%;
   }
   .cartPage p {
     margin-top: 40px;
