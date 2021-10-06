@@ -47,10 +47,10 @@ function popUp(){
     producto.innerHTML = 
         ` <div id='${product._id}' class = 'productCard d-flex flex-column'>
             <img class = 'mx-auto' src="${product.imageUrl}" alt="furniture">
-            <h3 class='itemHeader  mx-auto fw-bold fs-1'>${product.name}</h3>
-            <p class='description  mx-auto fs-4'>${product.description}</p>
+            <h3 class='itemHeader  mt-2 mb-2 mx-auto fw-bold fs-1'>${product.name}</h3>
+            <p class='description   mx-auto fs-4'>${product.description}</p>
             <div class = 'mx-auto'>
-                <label class= 'fs-4 fw-bold' for='varnish'>Choose a Varnish:</label>
+                <label class= 'fs-4 fw-bold' for='varnish'>Choose a Lense:</label>
                 ${dropDownMenu(product.lenses)}
             </div>
             <div class='price mb-3 mx-auto fs-4 fw-bold'>${money(product.price/100)} </div>

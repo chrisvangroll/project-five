@@ -28,7 +28,7 @@
 }
 .headr .plcHolderText {
   color: white;
-  width: 75%;
+  width: 60%;
 }
 @media (max-width: 550px) {
   .headr .plcHolderText {
@@ -177,40 +177,40 @@ footer {
   opacity: 0.8;
 }
 
-@media (min-width: 1101px) {
+@media (min-width: 701px) {
   main {
     height: 100%;
     margin-top: 6vh;
   }
   main .productCard img {
-    width: 80vh;
+    width: 45vw;
   }
   main .productCard h3 {
-    width: 80vh;
+    width: 45vw;
   }
   main .productCard p {
-    width: 80vh;
+    width: 45vw;
   }
   main .productCard div {
-    width: 80vh;
+    width: 45vw;
   }
 }
-@media (max-width: 1100px) {
+@media (max-width: 700px) {
   main {
     height: 100%;
     margin-top: 6vh;
   }
   main .productCard img {
-    width: 70vw;
+    width: 95vw;
   }
   main .productCard h3 {
-    width: 70vw;
+    width: 95vw;
   }
   main .productCard p {
-    width: 70vw;
+    width: 95vw;
   }
   main .productCard div {
-    width: 70vw;
+    width: 95vw;
   }
 }
 @media (max-width: 501px) {
@@ -267,9 +267,13 @@ footer {
 }
 .checkoutMain input {
   margin-bottom: 20px;
+  height: 40px;
+  width: 100%;
 }
 .checkoutMain select {
   margin-bottom: 20px;
+  height: 40px;
+  width: 100%;
 }
 
 @media (max-width: 500px) {
