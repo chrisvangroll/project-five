@@ -1,5 +1,4 @@
-# Full Stack Social Media Site
-
+# Orinoco
 This is an e-commerce site for a fictitious camera company.   
 
 ## Usage
